@@ -1,9 +1,10 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abdul Kalam — Funnels, Automations & AI Agents (GHL)</title>
+  <title>Abdul Kalam — GoHighLevel Systems Specialist</title>
 
   <!-- Tailwind CDN (single HTML file) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,12 +14,8 @@
     .reveal { opacity: 0; transform: translateY(14px); transition: .6s ease; }
     .reveal.in { opacity: 1; transform: translateY(0); }
 
-    /* Background glow wrapper like your screenshots */
-    .glow {
-      position: relative;
-      border-radius: 24px;
-      isolation: isolate;
-    }
+    /* Background glow wrapper */
+    .glow { position: relative; border-radius: 24px; isolation: isolate; }
     .glow::before {
       content: "";
       position: absolute;
@@ -37,11 +34,8 @@
     .lift { transition: transform .2s ease, background-color .2s ease; }
     .lift:hover { transform: translateY(-2px); }
 
-    /* Image shimmer overlay for funnel cards */
-    .shine {
-      position: relative;
-      overflow: hidden;
-    }
+    /* Image shimmer overlay for cards */
+    .shine { position: relative; overflow: hidden; }
     .shine::after {
       content: "";
       position: absolute;
@@ -52,14 +46,8 @@
       opacity: 0;
       transition: opacity .2s ease;
     }
-    .shine:hover::after {
-      opacity: 1;
-      animation: sweep 1.1s ease-in-out;
-    }
-    @keyframes sweep {
-      0% { left: -40%; }
-      100% { left: 120%; }
-    }
+    .shine:hover::after { opacity: 1; animation: sweep 1.1s ease-in-out; }
+    @keyframes sweep { 0% { left: -40%; } 100% { left: 120%; } }
 
     /* Reduce motion */
     @media (prefers-reduced-motion: reduce) {
@@ -99,51 +87,56 @@
         </div>
         <div class="leading-tight">
           <div class="text-sm font-semibold">Abdul Kalam</div>
-          <div class="text-xs text-slate-400">Funnels • Automations • AI Agents (GHL)</div>
+          <div class="text-xs text-slate-400">GoHighLevel Funnels • CRM • Automations</div>
         </div>
       </a>
 
       <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
         <a class="hover:text-white transition" href="#about">About</a>
+        <a class="hover:text-white transition" href="#packages">Packages</a>
         <a class="hover:text-white transition" href="#work">Work Proof</a>
-        <a class="hover:text-white transition" href="#testimonials">Testimonials</a>
-        <a class="hover:text-white transition" href="#contact">Contact Me</a>
+        <a class="hover:text-white transition" href="#contact">Contact</a>
       </div>
 
       <div class="flex items-center gap-2">
         <!-- Social Icons -->
-        <a id="navLinkedIn" href="https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/" target="_blank" class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition" aria-label="LinkedIn">
+        <a id="navLinkedIn" href="https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/" target="_blank"
+           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+           aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor">
             <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.05C12 8.9 13.6 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V24h-4v-8.9c0-2.1 0-4.8-2.9-4.8-2.9 0-3.4 2.3-3.4 4.6V24h-4V8Z"/>
           </svg>
         </a>
 
-        <a id="navFacebook" href="https://web.facebook.com/profile.php?id=100076966325420" target="_blank" class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition" aria-label="Facebook">
+        <a id="navFacebook" href="https://web.facebook.com/profile.php?id=100076966325420" target="_blank"
+           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+           aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor">
             <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/>
           </svg>
         </a>
 
-        <a id="navInstagram" href="https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5" target="_blank" class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition" aria-label="Instagram">
+        <a id="navInstagram" href="https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5" target="_blank"
+           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+           aria-label="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor">
             <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.7-.9a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
           </svg>
         </a>
 
-      <a id="navResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank"
-   class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
-  Resume
-</a>
+        <a id="navResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank"
+           class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
+          Resume
+        </a>
 
         <!-- Mobile menu button -->
         <button id="mobileBtn"
-          class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-          aria-label="Open menu">
+                class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+                aria-label="Open menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
-        
       </div>
     </nav>
 
@@ -151,15 +144,14 @@
     <div id="mobileMenu" class="hidden md:hidden border-t border-white/5">
       <div class="mx-auto max-w-6xl px-4 py-3 flex flex-col gap-1 text-sm text-slate-300">
         <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#about">About</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#packages">Packages</a>
         <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#work">Work Proof</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#testimonials">Testimonials</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact Me</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact</a>
 
         <a id="mResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank"
-   class="rounded-xl bg-white/5 px-4 py-3 text-center font-semibold ring-1 ring-white/10 hover:bg-white/10 transition">
-  Resume
-</a>
-
+           class="rounded-xl bg-white/5 px-4 py-3 text-center font-semibold ring-1 ring-white/10 hover:bg-white/10 transition">
+          Resume
+        </a>
 
         <div class="mt-2 grid grid-cols-3 gap-2">
           <a id="mLinkedIn" href="#" target="_blank" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">LinkedIn</a>
@@ -170,25 +162,34 @@
     </div>
   </header>
 
-  <!-- ABOUT (minimal text + chips, includes funnels) -->
+  <!-- ABOUT / HERO -->
   <section id="about" class="relative">
     <div class="mx-auto max-w-6xl px-4 pt-10 pb-8 md:pt-14">
       <div class="glow reveal rounded-[24px] bg-gradient-to-b from-white/6 to-white/2 ring-1 ring-white/10 overflow-hidden">
         <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
           <!-- Left -->
           <div>
-            <div class="text-xs tracking-wider text-emerald-300/90 font-semibold">I am Abdul Kalam GHL Expert</div>
+            <div class="text-xs tracking-wider text-emerald-300/90 font-semibold">
+              GoHighLevel Systems Specialist
+            </div>
 
             <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
-             I Build High-Converting <span class="text-emerald-300">Business Systems</span><br class="hidden sm:block"/>
-              <span class="text-blue-300"> Inside GoHighLevel </span>
+              I Build High-Converting <span class="text-emerald-300">Business Systems</span><br class="hidden sm:block"/>
+              <span class="text-blue-300">Inside GoHighLevel</span>
             </h1>
 
             <p class="mt-4 text-slate-300 leading-relaxed max-w-xl">
-              I build <span class="text-slate-100">high-converting funnels</span> inside GoHighLevel and connect them with
-              <span class="text-slate-100">workflows, pipelines, and AI chat/voice agents</span> so leads are captured,
-              followed up, and booked automatically (A2P 10DLC-ready SMS).
+              I set up <span class="text-slate-100">funnels, CRM pipelines, calendars, and automations</span> inside GoHighLevel
+              so leads are captured, followed up, and booked automatically — all in one platform (A2P 10DLC-ready SMS).
             </p>
+
+            <!-- Micro proof chips -->
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">GHL CRM + Pipelines</span>
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">Workflows (SMS/Email)</span>
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">Calendars + Booking</span>
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">A2P 10DLC Messaging</span>
+            </div>
 
             <!-- Simple stats -->
             <div class="mt-6 grid grid-cols-3 gap-4 max-w-lg">
@@ -197,71 +198,76 @@
                 <div class="text-xs text-slate-400">Built in GHL</div>
               </div>
               <div>
-                <div class="text-lg font-semibold">Automation</div>
-                <div class="text-xs text-slate-400">Workflows + CRM</div>
+                <div class="text-lg font-semibold">CRM</div>
+                <div class="text-xs text-slate-400">Pipelines + Tracking</div>
               </div>
               <div>
-                <div class="text-lg font-semibold">AI</div>
-                <div class="text-xs text-slate-400">Chat + Voice</div>
+                <div class="text-lg font-semibold">Automation</div>
+                <div class="text-xs text-slate-400">Workflows + Nurture</div>
               </div>
             </div>
 
             <!-- CTAs -->
             <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <a id="heroCalendar" href="https://link.romatechnologies.com/widget/bookings/abdul-kalam"
+              <!-- keep calendar link same (set by JS) -->
+              <a id="heroCalendar" href="#"
                  class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
-                Book Free Consultation
+                Book a GHL Setup Call
               </a>
 
               <a id="heroWhatsApp" href="#" target="_blank"
                  class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
-                WhatsApp Me
+                WhatsApp (Quick Quote)
               </a>
+            </div>
+
+            <div class="mt-3 text-xs text-slate-400">
+              Prefer email? <a class="text-slate-200 hover:text-white transition" href="mailto:ghlexperts333@gmail.com">ghlexperts333@gmail.com</a>
             </div>
           </div>
 
-          <!-- Right (chips like screenshot) -->
+          <!-- Right (chips) -->
           <div class="grid grid-cols-2 gap-3">
             <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
               <div class="flex items-center gap-2 text-sm font-semibold">
                 <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">🧩</span>
-                Funnel Builder
+                Funnel Builder (GHL)
               </div>
             </div>
             <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
               <div class="flex items-center gap-2 text-sm font-semibold">
                 <span class="h-9 w-9 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center">⚙️</span>
-                GoHighLevel Expert
+                CRM Setup
               </div>
             </div>
             <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
               <div class="flex items-center gap-2 text-sm font-semibold">
                 <span class="h-9 w-9 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center">🔁</span>
-                Workflow Automation
+                Workflows
               </div>
             </div>
             <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
               <div class="flex items-center gap-2 text-sm font-semibold">
                 <span class="h-9 w-9 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center">📌</span>
-                Pipeline Management
+                Pipelines
               </div>
             </div>
             <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
               <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">💬</span>
-                AI Chat Agents
+                <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">📅</span>
+                Calendars
               </div>
             </div>
             <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
               <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center">📞</span>
-                Voice AI Systems
+                <span class="h-9 w-9 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center">✉️</span>
+                SMS/Email Setup
               </div>
             </div>
             <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10 col-span-2">
               <div class="flex items-center gap-2 text-sm font-semibold">
                 <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">✅</span>
-                A2P 10DLC Ready (SMS Compliance)
+                A2P 10DLC Ready (Compliance)
               </div>
             </div>
           </div>
@@ -272,28 +278,97 @@
     </div>
   </section>
 
-  <!-- WORK PROOF (3 proofs with tabs: Funnels / Automations / AI Agents) -->
+  <!-- PACKAGES -->
+  <section id="packages" class="mx-auto max-w-6xl px-4 py-10">
+    <div class="reveal">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Packages (GHL Only)</h2>
+      <p class="mt-2 text-slate-300">Simple, clear deliverables. Pick what you need — I’ll handle the build inside GoHighLevel.</p>
+    </div>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-4">
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+        <div class="text-sm font-semibold">Starter Setup</div>
+        <div class="mt-1 text-xs text-slate-400">Best for new GHL accounts</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+          <li>• CRM basics + custom fields</li>
+          <li>• Pipeline stages</li>
+          <li>• Calendar + booking flow</li>
+          <li>• Basic notifications</li>
+        </ul>
+      </div>
+
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+        <div class="text-sm font-semibold">Automation Setup</div>
+        <div class="mt-1 text-xs text-slate-400">Stop lead leakage</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+          <li>• Workflows (SMS/Email)</li>
+          <li>• Missed-call text back</li>
+          <li>• Lead nurture sequences</li>
+          <li>• Pipeline auto-updates</li>
+        </ul>
+      </div>
+
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+        <div class="text-sm font-semibold">Funnel + Booking</div>
+        <div class="mt-1 text-xs text-slate-400">High-converting flow</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+          <li>• Landing page + form</li>
+          <li>• Thank-you page + CTA</li>
+          <li>• Calendar integration</li>
+          <li>• Tracking-ready setup</li>
+        </ul>
+      </div>
+
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-sm font-semibold">Full Growth System</div>
+            <div class="mt-1 text-xs text-slate-400">Most complete build</div>
+          </div>
+          <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Best</span>
+        </div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+          <li>• Funnel + CRM + pipeline</li>
+          <li>• Automations + nurturing</li>
+          <li>• Messaging templates</li>
+          <li>• QA + launch checklist</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal mt-6 flex flex-col sm:flex-row gap-3">
+      <a href="#contact"
+         class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
+        Get a Custom Plan (Free Call)
+      </a>
+      <a id="packagesWhatsApp" href="#" target="_blank"
+         class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
+        WhatsApp (Tell Me Your Goal)
+      </a>
+    </div>
+  </section>
+
+  <!-- WORK PROOF -->
   <section id="work" class="mx-auto max-w-6xl px-4 py-10">
     <div class="reveal">
       <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Work Proof</h2>
-      <p class="mt-2 text-slate-300">Three proofs: Funnels, Automations, and AI Agents. Click to view.</p>
+      <p class="mt-2 text-slate-300">Funnels, automations, and internal setups. Click to view.</p>
     </div>
 
     <!-- Tabs -->
     <div class="reveal mt-6 flex flex-wrap gap-2">
       <button data-tab="funnels" class="tabBtn rounded-full bg-emerald-500/15 text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25">Funnels</button>
       <button data-tab="automations" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10">Automations</button>
-      <button data-tab="agents" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10">AI Agents</button>
+      <button data-tab="agents" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10">AI (Inside GHL)</button>
     </div>
 
-    <!-- FUNNELS GRID (click -> redirect to your funnel link) -->
+    <!-- FUNNELS GRID -->
     <div id="tab-funnels" class="mt-6 grid gap-4 md:grid-cols-3">
-      <!-- Funnel Card 1 -->
       <a href="#" target="_blank" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition">
         <div class="relative h-44 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80"
                class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Funnel screenshot"/>
+               alt="Funnel preview"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
           <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
             <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
@@ -302,16 +377,15 @@
         </div>
         <div class="p-5">
           <div class="text-sm font-semibold">Booking Funnel</div>
-          <div class="mt-1 text-sm text-slate-300">Lead capture → instant follow-up → booking</div>
+          <div class="mt-1 text-sm text-slate-300">Lead capture → follow-up → booking</div>
         </div>
       </a>
 
-      <!-- Funnel Card 2 -->
       <a href="#" target="_blank" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition">
         <div class="relative h-44 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"
                class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Funnel screenshot"/>
+               alt="Funnel preview"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
           <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
             <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
@@ -320,16 +394,15 @@
         </div>
         <div class="p-5">
           <div class="text-sm font-semibold">Lead Gen Funnel</div>
-          <div class="mt-1 text-sm text-slate-300">Form → pipeline → nurture sequence</div>
+          <div class="mt-1 text-sm text-slate-300">Form → pipeline → nurture</div>
         </div>
       </a>
 
-      <!-- Funnel Card 3 -->
       <a href="#" target="_blank" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition">
         <div class="relative h-44 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1400&q=80"
                class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Funnel screenshot"/>
+               alt="Funnel preview"/>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
           <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
             <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
@@ -343,10 +416,10 @@
       </a>
     </div>
 
-    <!-- AUTOMATIONS (click -> proof modal) -->
+    <!-- AUTOMATIONS -->
     <div id="tab-automations" class="hidden mt-6 grid gap-4 md:grid-cols-3">
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="Workflow Automation Proof"
+              data-title="Workflow Automation (GHL)"
               data-desc="Trigger → If/Else → tags → pipeline updates → SMS/email follow-ups."
               data-images="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
         <div class="text-sm font-semibold">Workflows</div>
@@ -354,7 +427,7 @@
       </button>
 
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="Pipeline Automation Proof"
+              data-title="Pipeline Automation (GHL)"
               data-desc="Stage automation + task creation + staff alerts."
               data-images="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=80">
         <div class="text-sm font-semibold">Pipelines</div>
@@ -362,80 +435,43 @@
       </button>
 
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="A2P 10DLC + Messaging Proof"
-              data-desc="Compliance-ready templates, STOP handling, deliverability basics."
+              data-title="Messaging + A2P 10DLC"
+              data-desc="Compliance-ready templates + opt-out handling + deliverability basics."
               data-images="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=1400&q=80">
         <div class="text-sm font-semibold">Messaging / A2P</div>
         <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
       </button>
     </div>
 
-    <!-- AI AGENTS (click -> proof modal) -->
+    <!-- AI INSIDE GHL -->
     <div id="tab-agents" class="hidden mt-6 grid gap-4 md:grid-cols-3">
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="AI Chat Agent Proof"
+              data-title="AI Chat (Inside GHL)"
               data-desc="Qualification questions + tagging + booking handoff."
               data-images="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">AI Chat Agent</div>
+        <div class="text-sm font-semibold">AI Chat</div>
         <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
       </button>
 
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="AI Voice Agent Proof"
-              data-desc="Inbound/outbound calls + order/booking capture + pipeline update."
+              data-title="AI-Assisted Follow-ups"
+              data-desc="Response suggestions + conversation routing + follow-up logic."
               data-images="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">AI Voice Agent</div>
+        <div class="text-sm font-semibold">AI Follow-ups</div>
         <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
       </button>
 
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="AI Prompt / Flow Proof"
-              data-desc="Prompt structure + guardrails + escalation rules."
+              data-title="Prompt & Guardrails"
+              data-desc="Prompt structure + escalation rules + safe responses."
               data-images="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">Prompt & Flow</div>
+        <div class="text-sm font-semibold">Prompt & Rules</div>
         <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
       </button>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="mx-auto max-w-6xl px-4 py-10">
-    <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Testimonials</h2>
-      <p class="mt-2 text-slate-300">Replace placeholders with real feedback when you have it.</p>
-    </div>
-
-    <div class="mt-6 grid gap-4 md:grid-cols-3">
-      <figure class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
-        <blockquote class="text-sm text-slate-200 leading-relaxed">
-          “Excellent funnel + automation build. Everything was clean and easy for our team.”
-        </blockquote>
-        <figcaption class="mt-4 text-xs text-slate-400">
-          <span class="text-slate-200 font-semibold">Kevyn</span> — Business Owner
-        </figcaption>
-      </figure>
-
-      <figure class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
-        <blockquote class="text-sm text-slate-200 leading-relaxed">
-          “AI agent setup helped us qualify leads faster and book more calls.”
-        </blockquote>
-        <figcaption class="mt-4 text-xs text-slate-400">
-          <span class="text-slate-200 font-semibold">Branham Kipruto</span> — Agency Owner
-        </figcaption>
-      </figure>
-
-      <figure class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
-        <blockquote class="text-sm text-slate-200 leading-relaxed">
-          “A2P 10DLC guidance improved our SMS deliverability and compliance.”
-        </blockquote>
-        <figcaption class="mt-4 text-xs text-slate-400">
-          <span class="text-slate-200 font-semibold">Ali Kheerani</span> — Ops Manager
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- CONTACT (Book Consultation + WhatsApp) -->
+  <!-- CONTACT -->
   <section id="contact" class="mx-auto max-w-6xl px-4 py-12">
     <div class="reveal glow rounded-[24px] bg-gradient-to-b from-emerald-500/10 to-white/2 ring-1 ring-emerald-400/15 overflow-hidden">
       <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
@@ -446,25 +482,26 @@
           </div>
 
           <h2 class="mt-4 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
-            Ready to automate<br class="hidden sm:block"/>
-            <span class="text-emerald-300">your business?</span>
+            Ready to set up<br class="hidden sm:block"/>
+            <span class="text-emerald-300">GoHighLevel correctly?</span>
           </h2>
 
           <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
             <li class="flex gap-2"><span class="text-emerald-300">●</span> Quick call (15–30 minutes)</li>
-            <li class="flex gap-2"><span class="text-emerald-300">●</span> Funnel + automation plan</li>
-            <li class="flex gap-2"><span class="text-emerald-300">●</span> Clear next steps</li>
+            <li class="flex gap-2"><span class="text-emerald-300">●</span> Funnel + CRM automation plan</li>
+            <li class="flex gap-2"><span class="text-emerald-300">●</span> Clear next steps + timeline</li>
           </ul>
 
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <!-- keep calendar link same (set by JS) -->
             <a id="contactCalendar" href="#"
                class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
-              Book Free Consultation
+              Book a GHL Setup Call
             </a>
 
             <a id="contactWhatsApp" href="#" target="_blank"
                class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
-              WhatsApp Me
+              WhatsApp (Quick Quote)
             </a>
           </div>
 
@@ -473,7 +510,7 @@
           </div>
         </div>
 
-        <!-- Right circle (like your screenshot) -->
+        <!-- Right circle -->
         <div class="flex justify-center md:justify-end">
           <div class="relative h-56 w-56 rounded-full bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">
             <div class="absolute inset-6 rounded-full bg-slate-950/55 ring-1 ring-white/10"></div>
@@ -494,7 +531,7 @@
   <footer class="border-t border-white/5">
     <div class="mx-auto max-w-6xl px-4 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <div class="text-sm text-slate-400">
-        © <span id="year"></span> Abdul Kalam — GoHighLevel (GHL)
+        © <span id="year"></span> Abdul Kalam — GoHighLevel
       </div>
       <div class="flex flex-wrap gap-3 text-sm">
         <a id="footerLinkedIn" class="text-slate-300 hover:text-white transition" href="#" target="_blank">LinkedIn</a>
@@ -506,7 +543,7 @@
     </div>
   </footer>
 
-  <!-- PROOF MODAL (Automations + AI Agents) -->
+  <!-- PROOF MODAL -->
   <div id="proofBackdrop" class="hidden fixed inset-0 z-[80] bg-black/70 backdrop-blur-sm px-4 py-10">
     <div class="mx-auto max-w-4xl rounded-3xl bg-slate-950 ring-1 ring-white/10 overflow-hidden">
       <div class="flex items-start justify-between gap-4 border-b border-white/5 p-6">
@@ -529,22 +566,19 @@
 
   <script>
     // =========================================================
-    // UPDATE THESE ONLY (your real links)
+    // UPDATE THESE ONLY (your real links) — Calendar link unchanged
     // =========================================================
     const LINKS = {
-      // Social
       linkedin: "https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/",
       facebook: "https://web.facebook.com/profile.php?id=100076966325420",
       instagram: "https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5",
 
-      // WhatsApp
       whatsappNumber: "923097502122",
-      whatsappPrefill: "Hi Abdul, I want help with GHL funnels and automation.",
+      whatsappPrefill: "Hi Abdul, I want help with GoHighLevel setup (funnels, CRM, automations).",
 
-      // Calendar booking link (GHL calendar / Calendly / etc.)
+      // KEEP CALENDAR LINK SAME AS NOW:
       calendar: "https://link.romatechnologies.com/widget/booking/bzMxJvwGL0LammXXjigv",
 
-      // Your 3 funnel links (replace these)
       funnelUrls: [
         "https://app.gohighlevel.com/v2/preview/yPiYnFKvPYF4xDYIzLNt",
         "https://app.gohighlevel.com/v2/preview/xuOcvunHtTCRSVkE0ZPy",
@@ -556,33 +590,22 @@
       return `https://wa.me/${LINKS.whatsappNumber}?text=${encodeURIComponent(msg || LINKS.whatsappPrefill)}`;
     }
 
-    // Set social icon links (desktop)
     const setHref = (id, url) => { const el = document.getElementById(id); if (el) el.href = url; };
-    setHref("navLinkedIn", LINKS.linkedin);
-    setHref("navFacebook", LINKS.facebook);
-    setHref("navInstagram", LINKS.instagram);
 
-    // Mobile socials
-    setHref("mLinkedIn", LINKS.linkedin);
-    setHref("mFacebook", LINKS.facebook);
-    setHref("mInstagram", LINKS.instagram);
-
-    // Footer socials
-    setHref("footerLinkedIn", LINKS.linkedin);
-    setHref("footerFacebook", LINKS.facebook);
-    setHref("footerInstagram", LINKS.instagram);
+    // Social links (desktop/mobile/footer)
+    ["navLinkedIn","mLinkedIn","footerLinkedIn"].forEach(id => setHref(id, LINKS.linkedin));
+    ["navFacebook","mFacebook","footerFacebook"].forEach(id => setHref(id, LINKS.facebook));
+    ["navInstagram","mInstagram","footerInstagram"].forEach(id => setHref(id, LINKS.instagram));
 
     // WhatsApp links
     const wa = waLink();
-    ["navWhatsApp","heroWhatsApp","contactWhatsApp","mWhatsApp","footerWhatsApp"].forEach(id => setHref(id, wa));
+    ["heroWhatsApp","contactWhatsApp","footerWhatsApp","packagesWhatsApp"].forEach(id => setHref(id, wa));
 
-    // Calendar links
-    ["navCalendar","heroCalendar","contactCalendar","mCalendar","footerCalendar"].forEach(id => setHref(id, LINKS.calendar));
+    // Calendar links (keep same)
+    ["heroCalendar","contactCalendar","footerCalendar"].forEach(id => setHref(id, LINKS.calendar));
 
-    // Funnel links (assign to funnel cards)
-    document.querySelectorAll(".funnelLink").forEach((a, idx) => {
-      a.href = LINKS.funnelUrls[idx] || "#";
-    });
+    // Funnel links
+    document.querySelectorAll(".funnelLink").forEach((a, idx) => { a.href = LINKS.funnelUrls[idx] || "#"; });
 
     // Mobile menu
     const btn = document.getElementById("mobileBtn");
@@ -612,7 +635,7 @@
     // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Proof modal (Automations + AI Agents)
+    // Proof modal
     const proofBackdrop = document.getElementById("proofBackdrop");
     const proofTitle = document.getElementById("proofTitle");
     const proofDesc  = document.getElementById("proofDesc");
@@ -662,12 +685,8 @@
     // Tabs
     const tabs = ["funnels","automations","agents"];
     const tabBtns = document.querySelectorAll(".tabBtn");
-
     function showTab(name) {
-      tabs.forEach(t => {
-        document.getElementById(`tab-${t}`).classList.toggle("hidden", t !== name);
-      });
-
+      tabs.forEach(t => document.getElementById(`tab-${t}`).classList.toggle("hidden", t !== name));
       tabBtns.forEach(btn => {
         const active = btn.getAttribute("data-tab") === name;
         btn.className = active
@@ -680,3 +699,4 @@
   </script>
 </body>
 </html>
+```
