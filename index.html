@@ -3,10 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abdul Kalam — GoHighLevel Systems Specialist</title>
+
+  <!-- =========================
+       SEO (Best-practice, single-page)
+       ========================= -->
+  <title>Abdul Kalam — GoHighLevel (GHL) Funnels, CRM & Automations Specialist</title>
+  <meta name="description" content="Abdul Kalam helps businesses set up GoHighLevel systems: funnels, CRM pipelines, calendars, and automations (SMS/Email + A2P 10DLC). Book a free consultation." />
+  <meta name="keywords" content="GoHighLevel, GHL, Go High Level, funnels, CRM, automations, workflows, pipelines, calendars, A2P 10DLC, SMS marketing, email marketing, appointment booking" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://YOURDOMAIN.COM/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Abdul Kalam — GoHighLevel Systems Specialist" />
+  <meta property="og:description" content="Funnels • CRM Pipelines • Automations • Calendars • SMS/Email (A2P 10DLC). Book a free consultation." />
+  <meta property="og:url" content="https://YOURDOMAIN.COM/" />
+  <meta property="og:image" content="https://YOURDOMAIN.COM/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abdul Kalam — GoHighLevel Systems Specialist" />
+  <meta name="twitter:description" content="Funnels • CRM Pipelines • Automations • Calendars • SMS/Email (A2P 10DLC). Book a free consultation." />
+  <meta name="twitter:image" content="https://YOURDOMAIN.COM/og-image.jpg" />
 
   <!-- Tailwind CDN (single HTML file) -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Preconnect fonts (optional; you can add Inter via Google Fonts if you want) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- JSON-LD Structured Data (Personal Branding) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Abdul Kalam",
+    "jobTitle":"GoHighLevel Systems Specialist",
+    "description":"Funnels, CRM pipelines, calendars, and automations in GoHighLevel (GHL) including SMS/Email and A2P 10DLC readiness.",
+    "url":"https://YOURDOMAIN.COM/",
+    "sameAs":[
+      "https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/",
+      "https://web.facebook.com/profile.php?id=100076966325420",
+      "https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5"
+    ]
+  }
+  </script>
 
   <style>
     /* Smooth reveal */
@@ -48,11 +90,43 @@
     .shine:hover::after { opacity: 1; animation: sweep 1.1s ease-in-out; }
     @keyframes sweep { 0% { left: -40%; } 100% { left: 120%; } }
 
-    /* Reduce motion */
+    /* Rotating services (smooth flip) */
+    .rotator{
+      position:relative;
+      display:inline-block;
+      height:1.2em;            /* keeps layout stable */
+      vertical-align:bottom;
+      overflow:hidden;
+      min-width: 10ch;         /* avoids small jumps for short words */
+    }
+    .rotator span{
+      position:absolute;
+      left:0; top:0;
+      white-space:nowrap;
+      will-change:transform,opacity;
+    }
+    .rotator .in{
+      opacity:1;
+      transform:translateY(0);
+      transition:transform .55s ease, opacity .55s ease;
+    }
+    .rotator .out{
+      opacity:0;
+      transform:translateY(-120%);
+      transition:transform .55s ease, opacity .55s ease;
+    }
+    .rotator .next{
+      opacity:0;
+      transform:translateY(120%);
+    }
+
+    /* Skip animation for users who prefer reduced motion */
     @media (prefers-reduced-motion: reduce) {
-      .reveal { transition: none; transform: none; }
+      .reveal { transition: none; transform: none; opacity: 1; }
       .lift { transition: none; }
       .shine::after { animation: none; }
+      .rotator span { transition: none !important; transform: none !important; opacity: 1 !important; position: static; }
+      .rotator { height: auto; overflow: visible; }
     }
   </style>
 
@@ -71,16 +145,21 @@
 
 <body class="bg-slate-950 text-slate-100 font-sans">
   <!-- Page background glow -->
-  <div class="pointer-events-none fixed inset-0 overflow-hidden">
+  <div class="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
     <div class="absolute -top-44 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl"></div>
     <div class="absolute top-40 right-[-120px] h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-3xl"></div>
     <div class="absolute bottom-[-160px] left-[-120px] h-[520px] w-[520px] rounded-full bg-purple-500/10 blur-3xl"></div>
   </div>
 
+  <!-- Skip to content (SEO + accessibility) -->
+  <a href="#about" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[90] focus:rounded-xl focus:bg-slate-950 focus:px-4 focus:py-2 focus:ring-1 focus:ring-white/10">
+    Skip to content
+  </a>
+
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 bg-slate-950/70 backdrop-blur border-b border-white/5">
-    <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-      <a href="#about" class="flex items-center gap-2">
+    <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between" aria-label="Primary navigation">
+      <a href="#about" class="flex items-center gap-2" aria-label="Go to About section">
         <div class="h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 grid place-items-center">
           <span class="text-sm font-semibold">AK</span>
         </div>
@@ -99,31 +178,31 @@
 
       <div class="flex items-center gap-2">
         <!-- Social Icons -->
-        <a id="navLinkedIn" href="https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/" target="_blank"
+        <a id="navLinkedIn" href="https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/" target="_blank" rel="noopener"
            class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-           aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor">
+           aria-label="LinkedIn profile">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.05C12 8.9 13.6 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V24h-4v-8.9c0-2.1 0-4.8-2.9-4.8-2.9 0-3.4 2.3-3.4 4.6V24h-4V8Z"/>
           </svg>
         </a>
 
-        <a id="navFacebook" href="https://web.facebook.com/profile.php?id=100076966325420" target="_blank"
+        <a id="navFacebook" href="https://web.facebook.com/profile.php?id=100076966325420" target="_blank" rel="noopener"
            class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-           aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor">
+           aria-label="Facebook profile">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/>
           </svg>
         </a>
 
-        <a id="navInstagram" href="https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5" target="_blank"
+        <a id="navInstagram" href="https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5" target="_blank" rel="noopener"
            class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-           aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor">
+           aria-label="Instagram profile">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.7-.9a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
           </svg>
         </a>
 
-        <a id="navResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank"
+        <a id="navResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank" rel="noopener"
            class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
           Resume
         </a>
@@ -131,8 +210,8 @@
         <!-- Mobile menu button -->
         <button id="mobileBtn"
                 class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-                aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -147,384 +226,390 @@
         <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#work">Work Proof</a>
         <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact</a>
 
-        <a id="mResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank"
+        <a id="mResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank" rel="noopener"
            class="rounded-xl bg-white/5 px-4 py-3 text-center font-semibold ring-1 ring-white/10 hover:bg-white/10 transition">
           Resume
         </a>
 
         <div class="mt-2 grid grid-cols-3 gap-2">
-          <a id="mLinkedIn" href="#" target="_blank" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">LinkedIn</a>
-          <a id="mFacebook" href="#" target="_blank" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Facebook</a>
-          <a id="mInstagram" href="#" target="_blank" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Instagram</a>
+          <a id="mLinkedIn" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">LinkedIn</a>
+          <a id="mFacebook" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Facebook</a>
+          <a id="mInstagram" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Instagram</a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- ABOUT / HERO -->
-  <section id="about" class="relative">
-    <div class="mx-auto max-w-7xl px-4 pt-10 pb-8 md:pt-14">
-      <div class="glow reveal rounded-[24px] bg-gradient-to-b from-white/6 to-white/2 ring-1 ring-white/10 overflow-hidden">
+  <main>
+    <section id="about" class="relative">
+      <div class="mx-auto max-w-7xl px-4 pt-10 pb-8 md:pt-14">
+        <div class="glow reveal rounded-[24px] bg-gradient-to-b from-white/6 to-white/2 ring-1 ring-white/10 overflow-hidden">
+          <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
+            <!-- Left -->
+            <div>
+              <div class="text-xs tracking-wider text-emerald-300/90 font-semibold">
+                GoHighLevel Systems Specialist
+              </div>
+
+              <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+                I Build
+                <span class="text-emerald-300">High-Converting</span>
+                <span class="rotator text-blue-300 font-semibold">
+                  <span id="serviceA" class="in"></span>
+                  <span id="serviceB" class="next"></span>
+                </span>
+                <br class="hidden sm:block"/>
+                <span class="text-slate-100">Systems</span> inside <span class="text-blue-300">GoHighLevel</span>
+              </h1>
+
+              <p class="mt-4 text-slate-300 leading-relaxed max-w-xl">
+                I set up <span class="text-slate-100">funnels, CRM pipelines, calendars, and automations</span> inside GoHighLevel
+                so leads are captured, followed up, and booked automatically — all in one platform (A2P 10DLC-ready SMS).
+              </p>
+
+              <!-- Micro proof chips -->
+              <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">GHL CRM + Pipelines</span>
+                <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">Workflows (SMS/Email)</span>
+                <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">Calendars + Booking</span>
+                <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">A2P 10DLC Messaging</span>
+              </div>
+
+              <!-- Simple stats -->
+              <div class="mt-6 grid grid-cols-3 gap-4 max-w-lg">
+                <div>
+                  <div class="text-lg font-semibold">Funnels</div>
+                  <div class="text-xs text-slate-400">Built in GHL</div>
+                </div>
+                <div>
+                  <div class="text-lg font-semibold">CRM</div>
+                  <div class="text-xs text-slate-400">Pipelines + Tracking</div>
+                </div>
+                <div>
+                  <div class="text-lg font-semibold">Automation</div>
+                  <div class="text-xs text-slate-400">Workflows + Nurture</div>
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <a id="heroCalendar" href="#"
+                   class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
+                  Book a GHL Setup Call
+                </a>
+
+                <a id="heroWhatsApp" href="#" target="_blank" rel="noopener"
+                   class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
+                  WhatsApp (Quick Quote)
+                </a>
+              </div>
+
+              <div class="mt-3 text-xs text-slate-400">
+                Prefer email? <a class="text-slate-200 hover:text-white transition" href="mailto:ghlexperts333@gmail.com">ghlexperts333@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Right (chips) -->
+            <div class="grid grid-cols-2 gap-3" aria-label="Services summary">
+              <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+                <div class="flex items-center gap-2 text-sm font-semibold">
+                  <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center" aria-hidden="true">🧩</span>
+                  Funnel Builder (GHL)
+                </div>
+              </div>
+              <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+                <div class="flex items-center gap-2 text-sm font-semibold">
+                  <span class="h-9 w-9 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center" aria-hidden="true">⚙️</span>
+                  CRM Setup
+                </div>
+              </div>
+              <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+                <div class="flex items-center gap-2 text-sm font-semibold">
+                  <span class="h-9 w-9 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center" aria-hidden="true">🔁</span>
+                  Workflows
+                </div>
+              </div>
+              <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+                <div class="flex items-center gap-2 text-sm font-semibold">
+                  <span class="h-9 w-9 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center" aria-hidden="true">📌</span>
+                  Pipelines
+                </div>
+              </div>
+              <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+                <div class="flex items-center gap-2 text-sm font-semibold">
+                  <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center" aria-hidden="true">📅</span>
+                  Calendars
+                </div>
+              </div>
+              <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+                <div class="flex items-center gap-2 text-sm font-semibold">
+                  <span class="h-9 w-9 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center" aria-hidden="true">✉️</span>
+                  SMS/Email Setup
+                </div>
+              </div>
+              <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10 col-span-2">
+                <div class="flex items-center gap-2 text-sm font-semibold">
+                  <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center" aria-hidden="true">✅</span>
+                  A2P 10DLC Ready (Compliance)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/25"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages" class="mx-auto max-w-7xl px-4 py-10">
+      <div class="reveal">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Packages (GHL Only)</h2>
+        <p class="mt-2 text-slate-300">Simple, clear deliverables. Pick what you need — I’ll handle the build inside GoHighLevel.</p>
+      </div>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+          <div class="text-sm font-semibold">Starter Setup</div>
+          <div class="mt-1 text-xs text-slate-400">Best for new GHL accounts</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+            <li>• CRM basics + custom fields</li>
+            <li>• Pipeline stages</li>
+            <li>• Calendar + booking flow</li>
+            <li>• Basic notifications</li>
+          </ul>
+        </div>
+
+        <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+          <div class="text-sm font-semibold">Automation Setup</div>
+          <div class="mt-1 text-xs text-slate-400">Stop lead leakage</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+            <li>• Workflows (SMS/Email)</li>
+            <li>• Missed-call text back</li>
+            <li>• Lead nurture sequences</li>
+            <li>• Pipeline auto-updates</li>
+          </ul>
+        </div>
+
+        <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+          <div class="text-sm font-semibold">Funnel + Booking</div>
+          <div class="mt-1 text-xs text-slate-400">High-converting flow</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+            <li>• Landing page + form</li>
+            <li>• Thank-you page + CTA</li>
+            <li>• Calendar integration</li>
+            <li>• Tracking-ready setup</li>
+          </ul>
+        </div>
+
+        <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="text-sm font-semibold">Full Growth System</div>
+              <div class="mt-1 text-xs text-slate-400">Most complete build</div>
+            </div>
+            <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Best</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+            <li>• Funnel + CRM + pipeline</li>
+            <li>• Automations + nurturing</li>
+            <li>• Messaging templates</li>
+            <li>• QA + launch checklist</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal mt-6 flex flex-col sm:flex-row gap-3">
+        <a href="#contact"
+           class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
+          Get a Custom Plan (Free Call)
+        </a>
+        <a id="packagesWhatsApp" href="#" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
+          WhatsApp (Tell Me Your Goal)
+        </a>
+      </div>
+    </section>
+
+    <!-- WORK PROOF -->
+    <section id="work" class="mx-auto max-w-7xl px-4 py-10">
+      <div class="reveal">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Work Proof</h2>
+        <p class="mt-2 text-slate-300">Funnels, automations, and internal setups. Click to view.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="reveal mt-6 flex flex-wrap gap-2" role="tablist" aria-label="Work proof tabs">
+        <button data-tab="funnels" class="tabBtn rounded-full bg-emerald-500/15 text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25" role="tab" aria-selected="true">Funnels</button>
+        <button data-tab="automations" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10" role="tab" aria-selected="false">Automations</button>
+        <button data-tab="agents" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10" role="tab" aria-selected="false">AI (Inside GHL)</button>
+      </div>
+
+      <!-- FUNNELS GRID -->
+      <div id="tab-funnels" class="mt-6 grid gap-4 md:grid-cols-3">
+        <a href="#" target="_blank" rel="noopener" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition" aria-label="Open Booking Funnel preview">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80"
+                 class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
+                 alt="GoHighLevel booking funnel preview"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+              <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
+              <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="text-sm font-semibold">Booking Funnel</div>
+            <div class="mt-1 text-sm text-slate-300">Lead capture → follow-up → booking</div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition" aria-label="Open Lead Gen Funnel preview">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"
+                 class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
+                 alt="GoHighLevel lead generation funnel preview"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+              <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
+              <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="text-sm font-semibold">Lead Gen Funnel</div>
+            <div class="mt-1 text-sm text-slate-300">Form → pipeline → nurture</div>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition" aria-label="Open Offer Funnel preview">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1400&q=80"
+                 class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
+                 alt="GoHighLevel offer funnel preview"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+              <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
+              <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <div class="text-sm font-semibold">Offer Funnel</div>
+            <div class="mt-1 text-sm text-slate-300">Offer page → booking → confirmation</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- AUTOMATIONS -->
+      <div id="tab-automations" class="hidden mt-6 grid gap-4 md:grid-cols-3">
+        <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
+                data-title="Workflow Automation (GHL)"
+                data-desc="Trigger → If/Else → tags → pipeline updates → SMS/email follow-ups."
+                data-images="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
+          <div class="text-sm font-semibold">Workflows</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
+        </button>
+
+        <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
+                data-title="Pipeline Automation (GHL)"
+                data-desc="Stage automation + task creation + staff alerts."
+                data-images="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=80">
+          <div class="text-sm font-semibold">Pipelines</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
+        </button>
+
+        <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
+                data-title="Messaging + A2P 10DLC"
+                data-desc="Compliance-ready templates + opt-out handling + deliverability basics."
+                data-images="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=1400&q=80">
+          <div class="text-sm font-semibold">Messaging / A2P</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
+        </button>
+      </div>
+
+      <!-- AI INSIDE GHL -->
+      <div id="tab-agents" class="hidden mt-6 grid gap-4 md:grid-cols-3">
+        <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
+                data-title="AI Chat (Inside GHL)"
+                data-desc="Qualification questions + tagging + booking handoff."
+                data-images="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80">
+          <div class="text-sm font-semibold">AI Chat</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
+        </button>
+
+        <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
+                data-title="AI-Assisted Follow-ups"
+                data-desc="Response suggestions + conversation routing + follow-up logic."
+                data-images="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80">
+          <div class="text-sm font-semibold">AI Follow-ups</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
+        </button>
+
+        <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
+                data-title="Prompt & Guardrails"
+                data-desc="Prompt structure + escalation rules + safe responses."
+                data-images="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
+          <div class="text-sm font-semibold">Prompt & Rules</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-7xl px-4 py-12">
+      <div class="reveal glow rounded-[24px] bg-gradient-to-b from-emerald-500/10 to-white/2 ring-1 ring-emerald-400/15 overflow-hidden">
         <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
           <!-- Left -->
           <div>
-            <div class="text-xs tracking-wider text-emerald-300/90 font-semibold">
-              GoHighLevel Systems Specialist
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10">
+              Free Consultation
             </div>
 
-            <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
-              I Build High-Converting <span class="text-emerald-300">Business Systems</span><br class="hidden sm:block"/>
-              <span class="text-blue-300">Inside GoHighLevel</span>
-            </h1>
+            <h2 class="mt-4 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+              Ready to set up<br class="hidden sm:block"/>
+              <span class="text-emerald-300">GoHighLevel correctly?</span>
+            </h2>
 
-            <p class="mt-4 text-slate-300 leading-relaxed max-w-xl">
-              I set up <span class="text-slate-100">funnels, CRM pipelines, calendars, and automations</span> inside GoHighLevel
-              so leads are captured, followed up, and booked automatically — all in one platform (A2P 10DLC-ready SMS).
-            </p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+              <li class="flex gap-2"><span class="text-emerald-300" aria-hidden="true">●</span> Quick call (15–30 minutes)</li>
+              <li class="flex gap-2"><span class="text-emerald-300" aria-hidden="true">●</span> Funnel + CRM automation plan</li>
+              <li class="flex gap-2"><span class="text-emerald-300" aria-hidden="true">●</span> Clear next steps + timeline</li>
+            </ul>
 
-            <!-- Micro proof chips -->
-            <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">GHL CRM + Pipelines</span>
-              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">Workflows (SMS/Email)</span>
-              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">Calendars + Booking</span>
-              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">A2P 10DLC Messaging</span>
-            </div>
-
-            <!-- Simple stats -->
-            <div class="mt-6 grid grid-cols-3 gap-4 max-w-lg">
-              <div>
-                <div class="text-lg font-semibold">Funnels</div>
-                <div class="text-xs text-slate-400">Built in GHL</div>
-              </div>
-              <div>
-                <div class="text-lg font-semibold">CRM</div>
-                <div class="text-xs text-slate-400">Pipelines + Tracking</div>
-              </div>
-              <div>
-                <div class="text-lg font-semibold">Automation</div>
-                <div class="text-xs text-slate-400">Workflows + Nurture</div>
-              </div>
-            </div>
-
-            <!-- CTAs -->
             <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <!-- keep calendar link same (set by JS) -->
-              <a id="heroCalendar" href="#"
+              <a id="contactCalendar" href="#"
                  class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
                 Book a GHL Setup Call
               </a>
 
-              <a id="heroWhatsApp" href="#" target="_blank"
+              <a id="contactWhatsApp" href="#" target="_blank" rel="noopener"
                  class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
                 WhatsApp (Quick Quote)
               </a>
             </div>
 
-            <div class="mt-3 text-xs text-slate-400">
-              Prefer email? <a class="text-slate-200 hover:text-white transition" href="mailto:ghlexperts333@gmail.com">ghlexperts333@gmail.com</a>
+            <div class="mt-4 text-xs text-slate-400">
+              Email: <a class="text-slate-200 hover:text-white transition" href="mailto:ghlexperts333@gmail.com">ghlexperts333@gmail.com</a>
             </div>
           </div>
 
-          <!-- Right (chips) -->
-          <div class="grid grid-cols-2 gap-3">
-            <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
-              <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">🧩</span>
-                Funnel Builder (GHL)
-              </div>
-            </div>
-            <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
-              <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center">⚙️</span>
-                CRM Setup
-              </div>
-            </div>
-            <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
-              <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center">🔁</span>
-                Workflows
-              </div>
-            </div>
-            <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
-              <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center">📌</span>
-                Pipelines
-              </div>
-            </div>
-            <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
-              <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">📅</span>
-                Calendars
-              </div>
-            </div>
-            <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
-              <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center">✉️</span>
-                SMS/Email Setup
-              </div>
-            </div>
-            <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10 col-span-2">
-              <div class="flex items-center gap-2 text-sm font-semibold">
-                <span class="h-9 w-9 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">✅</span>
-                A2P 10DLC Ready (Compliance)
+          <!-- Right circle -->
+          <div class="flex justify-center md:justify-end">
+            <div class="relative h-56 w-56 rounded-full bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">
+              <div class="absolute inset-6 rounded-full bg-slate-950/55 ring-1 ring-white/10"></div>
+              <div class="relative text-center">
+                <div class="text-4xl font-semibold">30</div>
+                <div class="text-xs text-slate-300">minutes</div>
+                <div class="mt-4 text-xs text-slate-400">Response time:</div>
+                <div class="text-xs text-emerald-300 font-semibold">Within 24 hours</div>
               </div>
             </div>
           </div>
         </div>
-
         <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/25"></div>
       </div>
-    </div>
-  </section>
-
-  <!-- PACKAGES -->
-  <section id="packages" class="mx-auto max-w-7xl px-4 py-10">
-    <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Packages (GHL Only)</h2>
-      <p class="mt-2 text-slate-300">Simple, clear deliverables. Pick what you need — I’ll handle the build inside GoHighLevel.</p>
-    </div>
-
-    <div class="mt-6 grid gap-4 md:grid-cols-4">
-      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
-        <div class="text-sm font-semibold">Starter Setup</div>
-        <div class="mt-1 text-xs text-slate-400">Best for new GHL accounts</div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
-          <li>• CRM basics + custom fields</li>
-          <li>• Pipeline stages</li>
-          <li>• Calendar + booking flow</li>
-          <li>• Basic notifications</li>
-        </ul>
-      </div>
-
-      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
-        <div class="text-sm font-semibold">Automation Setup</div>
-        <div class="mt-1 text-xs text-slate-400">Stop lead leakage</div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
-          <li>• Workflows (SMS/Email)</li>
-          <li>• Missed-call text back</li>
-          <li>• Lead nurture sequences</li>
-          <li>• Pipeline auto-updates</li>
-        </ul>
-      </div>
-
-      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
-        <div class="text-sm font-semibold">Funnel + Booking</div>
-        <div class="mt-1 text-xs text-slate-400">High-converting flow</div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
-          <li>• Landing page + form</li>
-          <li>• Thank-you page + CTA</li>
-          <li>• Calendar integration</li>
-          <li>• Tracking-ready setup</li>
-        </ul>
-      </div>
-
-      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
-        <div class="flex items-center justify-between">
-          <div>
-            <div class="text-sm font-semibold">Full Growth System</div>
-            <div class="mt-1 text-xs text-slate-400">Most complete build</div>
-          </div>
-          <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Best</span>
-        </div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
-          <li>• Funnel + CRM + pipeline</li>
-          <li>• Automations + nurturing</li>
-          <li>• Messaging templates</li>
-          <li>• QA + launch checklist</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="reveal mt-6 flex flex-col sm:flex-row gap-3">
-      <a href="#contact"
-         class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
-        Get a Custom Plan (Free Call)
-      </a>
-      <a id="packagesWhatsApp" href="#" target="_blank"
-         class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
-        WhatsApp (Tell Me Your Goal)
-      </a>
-    </div>
-  </section>
-
-  <!-- WORK PROOF -->
-  <section id="work" class="mx-auto max-w-7xl px-4 py-10">
-    <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Work Proof</h2>
-      <p class="mt-2 text-slate-300">Funnels, automations, and internal setups. Click to view.</p>
-    </div>
-
-    <!-- Tabs -->
-    <div class="reveal mt-6 flex flex-wrap gap-2">
-      <button data-tab="funnels" class="tabBtn rounded-full bg-emerald-500/15 text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25">Funnels</button>
-      <button data-tab="automations" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10">Automations</button>
-      <button data-tab="agents" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10">AI (Inside GHL)</button>
-    </div>
-
-    <!-- FUNNELS GRID -->
-    <div id="tab-funnels" class="mt-6 grid gap-4 md:grid-cols-3">
-      <a href="#" target="_blank" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80"
-               class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Funnel preview"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-            <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
-            <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
-          </div>
-        </div>
-        <div class="p-5">
-          <div class="text-sm font-semibold">Booking Funnel</div>
-          <div class="mt-1 text-sm text-slate-300">Lead capture → follow-up → booking</div>
-        </div>
-      </a>
-
-      <a href="#" target="_blank" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"
-               class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Funnel preview"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-            <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
-            <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
-          </div>
-        </div>
-        <div class="p-5">
-          <div class="text-sm font-semibold">Lead Gen Funnel</div>
-          <div class="mt-1 text-sm text-slate-300">Form → pipeline → nurture</div>
-        </div>
-      </a>
-
-      <a href="#" target="_blank" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1400&q=80"
-               class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Funnel preview"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-            <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
-            <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
-          </div>
-        </div>
-        <div class="p-5">
-          <div class="text-sm font-semibold">Offer Funnel</div>
-          <div class="mt-1 text-sm text-slate-300">Offer page → booking → confirmation</div>
-        </div>
-      </a>
-    </div>
-
-    <!-- AUTOMATIONS -->
-    <div id="tab-automations" class="hidden mt-6 grid gap-4 md:grid-cols-3">
-      <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="Workflow Automation (GHL)"
-              data-desc="Trigger → If/Else → tags → pipeline updates → SMS/email follow-ups."
-              data-images="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">Workflows</div>
-        <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
-      </button>
-
-      <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="Pipeline Automation (GHL)"
-              data-desc="Stage automation + task creation + staff alerts."
-              data-images="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">Pipelines</div>
-        <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
-      </button>
-
-      <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="Messaging + A2P 10DLC"
-              data-desc="Compliance-ready templates + opt-out handling + deliverability basics."
-              data-images="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">Messaging / A2P</div>
-        <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
-      </button>
-    </div>
-
-    <!-- AI INSIDE GHL -->
-    <div id="tab-agents" class="hidden mt-6 grid gap-4 md:grid-cols-3">
-      <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="AI Chat (Inside GHL)"
-              data-desc="Qualification questions + tagging + booking handoff."
-              data-images="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">AI Chat</div>
-        <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
-      </button>
-
-      <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="AI-Assisted Follow-ups"
-              data-desc="Response suggestions + conversation routing + follow-up logic."
-              data-images="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">AI Follow-ups</div>
-        <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
-      </button>
-
-      <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
-              data-title="Prompt & Guardrails"
-              data-desc="Prompt structure + escalation rules + safe responses."
-              data-images="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold">Prompt & Rules</div>
-        <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
-      </button>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="mx-auto max-w-7xl px-4 py-12">
-    <div class="reveal glow rounded-[24px] bg-gradient-to-b from-emerald-500/10 to-white/2 ring-1 ring-emerald-400/15 overflow-hidden">
-      <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
-        <!-- Left -->
-        <div>
-          <div class="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10">
-            Free Consultation
-          </div>
-
-          <h2 class="mt-4 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
-            Ready to set up<br class="hidden sm:block"/>
-            <span class="text-emerald-300">GoHighLevel correctly?</span>
-          </h2>
-
-          <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
-            <li class="flex gap-2"><span class="text-emerald-300">●</span> Quick call (15–30 minutes)</li>
-            <li class="flex gap-2"><span class="text-emerald-300">●</span> Funnel + CRM automation plan</li>
-            <li class="flex gap-2"><span class="text-emerald-300">●</span> Clear next steps + timeline</li>
-          </ul>
-
-          <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <!-- keep calendar link same (set by JS) -->
-            <a id="contactCalendar" href="#"
-               class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
-              Book a GHL Setup Call
-            </a>
-
-            <a id="contactWhatsApp" href="#" target="_blank"
-               class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
-              WhatsApp (Quick Quote)
-            </a>
-          </div>
-
-          <div class="mt-4 text-xs text-slate-400">
-            Email: <a class="text-slate-200 hover:text-white transition" href="mailto:ghlexperts333@gmail.com">ghlexperts333@gmail.com</a>
-          </div>
-        </div>
-
-        <!-- Right circle -->
-        <div class="flex justify-center md:justify-end">
-          <div class="relative h-56 w-56 rounded-full bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">
-            <div class="absolute inset-6 rounded-full bg-slate-950/55 ring-1 ring-white/10"></div>
-            <div class="relative text-center">
-              <div class="text-4xl font-semibold">30</div>
-              <div class="text-xs text-slate-300">minutes</div>
-              <div class="mt-4 text-xs text-slate-400">Response time:</div>
-              <div class="text-xs text-emerald-300 font-semibold">Within 24 hours</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/25"></div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-white/5">
@@ -533,17 +618,17 @@
         © <span id="year"></span> Abdul Kalam — GoHighLevel
       </div>
       <div class="flex flex-wrap gap-3 text-sm">
-        <a id="footerLinkedIn" class="text-slate-300 hover:text-white transition" href="#" target="_blank">LinkedIn</a>
-        <a id="footerFacebook" class="text-slate-300 hover:text-white transition" href="#" target="_blank">Facebook</a>
-        <a id="footerInstagram" class="text-slate-300 hover:text-white transition" href="#" target="_blank">Instagram</a>
+        <a id="footerLinkedIn" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="footerFacebook" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a id="footerInstagram" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">Instagram</a>
         <a id="footerCalendar" class="text-slate-300 hover:text-white transition" href="#">Book</a>
-        <a id="footerWhatsApp" class="text-slate-300 hover:text-white transition" href="#" target="_blank">WhatsApp</a>
+        <a id="footerWhatsApp" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </footer>
 
   <!-- PROOF MODAL -->
-  <div id="proofBackdrop" class="hidden fixed inset-0 z-[80] bg-black/70 backdrop-blur-sm px-4 py-10">
+  <div id="proofBackdrop" class="hidden fixed inset-0 z-[80] bg-black/70 backdrop-blur-sm px-4 py-10" role="dialog" aria-modal="true" aria-label="Work proof modal">
     <div class="mx-auto max-w-4xl rounded-3xl bg-slate-950 ring-1 ring-white/10 overflow-hidden">
       <div class="flex items-start justify-between gap-4 border-b border-white/5 p-6">
         <div>
@@ -551,7 +636,7 @@
           <p id="proofDesc" class="mt-2 text-sm text-slate-300"></p>
         </div>
         <button id="proofClose" class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition" aria-label="Close">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
@@ -585,6 +670,7 @@
       ]
     };
 
+    // Build WhatsApp link
     function waLink(msg) {
       return `https://wa.me/${LINKS.whatsappNumber}?text=${encodeURIComponent(msg || LINKS.whatsappPrefill)}`;
     }
@@ -607,10 +693,16 @@
     document.querySelectorAll(".funnelLink").forEach((a, idx) => { a.href = LINKS.funnelUrls[idx] || "#"; });
 
     // Mobile menu
-    const btn = document.getElementById("mobileBtn");
+    const mobileBtn = document.getElementById("mobileBtn");
     const menu = document.getElementById("mobileMenu");
-    btn?.addEventListener("click", () => menu.classList.toggle("hidden"));
-    menu?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.add("hidden")));
+    mobileBtn?.addEventListener("click", () => {
+      const isHidden = menu.classList.toggle("hidden");
+      mobileBtn.setAttribute("aria-expanded", String(!isHidden));
+    });
+    menu?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      mobileBtn?.setAttribute("aria-expanded", "false");
+    }));
 
     // Reveal on scroll
     const items = document.querySelectorAll(".reveal");
@@ -651,7 +743,7 @@
         card.className = "rounded-2xl overflow-hidden bg-white/5 ring-1 ring-white/10";
         card.innerHTML = `
           <div class="aspect-[16/10] w-full overflow-hidden">
-            <img src="${src}" class="h-full w-full object-cover opacity-95" alt="Proof ${i+1}"/>
+            <img src="${src}" class="h-full w-full object-cover opacity-95" alt="Work proof screenshot ${i+1}"/>
           </div>
         `;
         proofImages.appendChild(card);
@@ -688,6 +780,7 @@
       tabs.forEach(t => document.getElementById(`tab-${t}`).classList.toggle("hidden", t !== name));
       tabBtns.forEach(btn => {
         const active = btn.getAttribute("data-tab") === name;
+        btn.setAttribute("aria-selected", String(active));
         btn.className = active
           ? "tabBtn rounded-full bg-emerald-500/15 text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25"
           : "tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10";
@@ -695,6 +788,48 @@
     }
     tabBtns.forEach(btn => btn.addEventListener("click", () => showTab(btn.getAttribute("data-tab"))));
     showTab("funnels");
+
+    // =========================
+    // Rotating services (smooth flip)
+    // =========================
+    const SERVICES = [
+      "Funnels",
+      "CRM Pipelines",
+      "Automations",
+      "Calendars",
+      "SMS/Email Follow-ups",
+      "AI Chat (Inside GHL)"
+    ];
+
+    const elA = document.getElementById("serviceA");
+    const elB = document.getElementById("serviceB");
+
+    let idx = 0;
+    let showingA = true;
+
+    function setText(el, txt){ el.textContent = txt; }
+
+    function swap(){
+      const current = showingA ? elA : elB;
+      const next    = showingA ? elB : elA;
+
+      idx = (idx + 1) % SERVICES.length;
+      setText(next, SERVICES[idx]);
+
+      next.className = "next"; // prepare below
+      requestAnimationFrame(() => {
+        current.className = "out";
+        next.className = "in";
+        showingA = !showingA;
+      });
+    }
+
+    // init
+    setText(elA, SERVICES[0]);
+    setText(elB, SERVICES[1]);
+
+    // start rotation (adjust speed here)
+    setInterval(swap, 2200);
   </script>
 </body>
 </html>
