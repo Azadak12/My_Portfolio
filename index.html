@@ -627,6 +627,74 @@
       <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/25"></div>
     </div>
   </section>
+  <!-- FAQ (add this section right before <footer> ) -->
+<section id="faqs" class="mx-auto max-w-7xl px-4 pb-12">
+  <div class="reveal">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">FAQs</h2>
+    <p class="mt-2 text-slate-300">Quick answers before you book.</p>
+  </div>
+
+  <div class="reveal mt-6 rounded-3xl bg-white/4 ring-1 ring-white/10 p-6 md:p-8">
+    <div class="space-y-3">
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">What do you need from me before you start?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Access to your GoHighLevel sub-account, your offer details (service, pricing, guarantee), and your preferred booking flow. If you already have assets (logo, colors, copy), I’ll use them — otherwise I’ll keep it clean and conversion-first.
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">Can you fix an existing GHL setup instead of building from scratch?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Yes. I can audit your funnels, pipelines, calendars, and workflows, then clean up triggers, tags, stages, and follow-up logic so leads don’t fall through the cracks.
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">Do you set up SMS/Email follow-ups and compliance basics?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Yes — I set up templates, timing, opt-out handling, and a clean workflow structure. For US numbers, I also help you get A2P 10DLC-ready (brand/campaign compliance flow).
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">Will my team know how to use it after setup?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Yes. I keep naming consistent, document key workflows, and can record a short walkthrough so your team knows where to update templates, stages, and calendars.
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">How fast can you launch a basic funnel + booking system?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          If assets and offer details are ready, a clean funnel + form + calendar flow can be launched quickly. More complex automation and multi-step nurturing takes longer — I’ll confirm scope on the call.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer class="border-t border-white/5">
@@ -666,6 +734,40 @@
   </div>
 
   <script>
+    <script>
+  // FAQ accordion (single open at a time)
+  (function () {
+    const items = Array.from(document.querySelectorAll(".faqItem"));
+    if (!items.length) return;
+
+    function closeAll(except) {
+      items.forEach(item => {
+        if (item === except) return;
+        item.querySelector(".faqPanel")?.classList.add("hidden");
+        const ic = item.querySelector(".faqIcon");
+        if (ic) ic.textContent = "+";
+      });
+    }
+
+    items.forEach(item => {
+      const btn = item.querySelector(".faqBtn");
+      const panel = item.querySelector(".faqPanel");
+      const icon = item.querySelector(".faqIcon");
+
+      btn?.addEventListener("click", () => {
+        const isOpen = !panel.classList.contains("hidden");
+        closeAll(item);
+        if (isOpen) {
+          panel.classList.add("hidden");
+          if (icon) icon.textContent = "+";
+        } else {
+          panel.classList.remove("hidden");
+          if (icon) icon.textContent = "–";
+        }
+      });
+    });
+  })();
+</script>
     // =========================================================
     // UPDATE THESE ONLY (your real links)
     // =========================================================
