@@ -86,43 +86,37 @@
     .shine:hover::after { opacity: 1; animation: sweep 1.1s ease-in-out; }
     @keyframes sweep { 0% { left: -40%; } 100% { left: 120%; } }
 
-    /* Rotating services (smooth flip) */
-    .rotator{
-      position:relative;
-      display:inline-block;
-      height:1.2em;
-      vertical-align:bottom;
-      overflow:hidden;
-      min-width: 12ch;
+    /* =========================
+       Typewriter (fancy)
+       ========================= */
+    .typeLine{
+      display: inline-flex;
+      align-items: center;
+      gap: .15rem;
     }
-    .rotator span{
-      position:absolute;
-      left:0; top:0;
-      white-space:nowrap;
-      will-change:transform,opacity;
+    #typeText{
+      white-space: nowrap;
+      display: inline-block;
+      padding-right: 2px;
+      filter: drop-shadow(0 0 18px rgba(59,130,246,.18));
     }
-    .rotator .in{
-      opacity:1;
-      transform:translateY(0);
-      transition:transform .55s ease, opacity .55s ease;
+    .typeCursor{
+      width: 10px;
+      height: 1.05em;
+      border-radius: 999px;
+      background: rgba(59,130,246,.9);
+      box-shadow: 0 0 18px rgba(59,130,246,.45);
+      animation: blink 1s steps(1) infinite;
+      transform: translateY(1px);
     }
-    .rotator .out{
-      opacity:0;
-      transform:translateY(-120%);
-      transition:transform .55s ease, opacity .55s ease;
-    }
-    .rotator .next{
-      opacity:0;
-      transform:translateY(120%);
-    }
+    @keyframes blink{ 50% { opacity: 0; } }
 
     /* Reduce motion */
     @media (prefers-reduced-motion: reduce) {
       .reveal { transition: none; transform: none; opacity: 1; }
       .lift { transition: none; }
       .shine::after { animation: none; }
-      .rotator span { transition: none !important; transform: none !important; opacity: 1 !important; position: static; }
-      .rotator { height: auto; overflow: visible; min-width: auto; }
+      .typeCursor { animation: none; }
     }
   </style>
 
@@ -239,63 +233,56 @@
       <div class="glow reveal rounded-[24px] bg-gradient-to-b from-white/6 to-white/2 ring-1 ring-white/10 overflow-hidden">
         <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
           <!-- Left -->
-      <!-- Left (final – clean headline, animation separated) -->
-<div>
-  <!-- Eyebrow -->
-  <div class="text-xs tracking-wider text-emerald-300/90 font-semibold">
-    GoHighLevel Systems Specialist
-  </div>
+          <div>
+            <div class="text-xs tracking-wider text-emerald-300/90 font-semibold">
+              GoHighLevel Systems Specialist
+            </div>
 
-  <!-- Main Headline (UNTOUCHED sentence) -->
-  <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15]">
-    I Build <span class="text-emerald-300">High-Converting</span>
-    <span class="text-slate-100">Systems</span> inside
-    <span class="text-blue-300">GoHighLevel</span>
-  </h1>
+            <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15]">
+              I Build <span class="text-emerald-300">High-Converting</span>
+              <span class="text-slate-100">Systems</span> inside
+              <span class="text-blue-300">GoHighLevel</span>
+            </h1>
 
-  <!-- Animated supporting line (separate, clean) -->
-  <div class="mt-2 h-[1.25em] overflow-hidden">
-    <span class="relative inline-block text-blue-300 font-semibold text-lg">
-      <span id="serviceA" class="in"></span>
-      <span id="serviceB" class="next"></span>
-    </span>
-  </div>
+            <!-- Typewriter supporting line -->
+            <div class="mt-2 h-[1.35em] overflow-hidden">
+              <span class="typeLine text-blue-300 font-semibold text-lg">
+                <span class="text-slate-300/80 mr-1">→</span>
+                <span id="typeText"></span>
+                <span class="typeCursor" aria-hidden="true"></span>
+              </span>
+            </div>
 
-  <!-- Description -->
-  <p class="mt-4 text-slate-300 leading-relaxed max-w-xl">
-    Automation-first funnels, CRM pipelines, and follow-ups that turn leads into booked appointments — with less manual work.
-  </p>
+            <p class="mt-4 text-slate-300 leading-relaxed max-w-xl">
+              Automation-first funnels, CRM pipelines, and follow-ups that turn leads into booked appointments — with less manual work.
+            </p>
 
-  <!-- Minimal chips -->
-  <div class="mt-4 flex flex-wrap gap-2 text-xs">
-    <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">
-      Lead capture → follow-up → booking
-    </span>
-    <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">
-      Compliance-ready messaging
-    </span>
-  </div>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">
+                Lead capture → follow-up → booking
+              </span>
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">
+                Compliance-ready messaging
+              </span>
+            </div>
 
-  <!-- CTAs -->
-  <div class="mt-6 flex flex-col sm:flex-row gap-3">
-    <a id="heroCalendar" href="#"
-       class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
-      Book a GHL Setup Call
-    </a>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a id="heroCalendar" href="#"
+                 class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
+                Book a GHL Setup Call
+              </a>
 
-    <a id="heroWhatsApp" href="#" target="_blank" rel="noopener"
-       class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
-      WhatsApp (Quick Quote)
-    </a>
-  </div>
-
-  
-</div>
+              <a id="heroWhatsApp" href="#" target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
+                WhatsApp (Quick Quote)
+              </a>
+            </div>
+          </div>
+          <!-- /Left -->
 
           <!-- Right: YOUR PHOTO ONLY -->
           <div class="relative">
             <div class="relative rounded-3xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-              <!-- ✅ Replace this src with your photo -->
               <img
                 src="AK.png"
                 alt="Abdul Kalam — GoHighLevel Systems Specialist"
@@ -304,7 +291,6 @@
               />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
 
-              <!-- Badges -->
               <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2">
                 <span class="text-xs text-slate-200 bg-black/35 px-3 py-1.5 rounded-full ring-1 ring-white/10">
                   GoHighLevel Specialist
@@ -315,7 +301,6 @@
               </div>
             </div>
 
-            <!-- Small note under photo (optional but looks premium) -->
             <div class="mt-3 text-xs text-slate-400">
               Available for remote setup & optimization • Response within 24 hours
             </div>
@@ -328,7 +313,7 @@
     </div>
   </section>
 
-  <!-- SERVICES (NEW SECTION - moved from hero right) -->
+  <!-- SERVICES -->
   <section id="services" class="mx-auto max-w-7xl px-4 py-10">
     <div class="reveal">
       <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Services</h2>
@@ -478,14 +463,12 @@
       <p class="mt-2 text-slate-300">Funnels, automations, and internal setups. Click to view.</p>
     </div>
 
-    <!-- Tabs -->
     <div class="reveal mt-6 flex flex-wrap gap-2">
       <button data-tab="funnels" class="tabBtn rounded-full bg-emerald-500/15 text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25">Funnels</button>
       <button data-tab="automations" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10">Automations</button>
       <button data-tab="agents" class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10">AI (Inside GHL)</button>
     </div>
 
-    <!-- FUNNELS GRID -->
     <div id="tab-funnels" class="mt-6 grid gap-4 md:grid-cols-3">
       <a href="#" target="_blank" rel="noopener" class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition">
         <div class="relative h-44 overflow-hidden">
@@ -539,7 +522,6 @@
       </a>
     </div>
 
-    <!-- AUTOMATIONS -->
     <div id="tab-automations" class="hidden mt-6 grid gap-4 md:grid-cols-3">
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
               data-title="Workflow Automation (GHL)"
@@ -566,7 +548,6 @@
       </button>
     </div>
 
-    <!-- AI INSIDE GHL -->
     <div id="tab-agents" class="hidden mt-6 grid gap-4 md:grid-cols-3">
       <button class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition"
               data-title="AI Chat (Inside GHL)"
@@ -598,7 +579,6 @@
   <section id="contact" class="mx-auto max-w-7xl px-4 py-12">
     <div class="reveal glow rounded-[24px] bg-gradient-to-b from-emerald-500/10 to-white/2 ring-1 ring-emerald-400/15 overflow-hidden">
       <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
-        <!-- Left -->
         <div>
           <div class="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10">
             Free Consultation
@@ -632,7 +612,6 @@
           </div>
         </div>
 
-        <!-- Right circle -->
         <div class="flex justify-center md:justify-end">
           <div class="relative h-56 w-56 rounded-full bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">
             <div class="absolute inset-6 rounded-full bg-slate-950/55 ring-1 ring-white/10"></div>
@@ -688,7 +667,7 @@
 
   <script>
     // =========================================================
-    // UPDATE THESE ONLY (your real links) — Calendar link unchanged
+    // UPDATE THESE ONLY (your real links)
     // =========================================================
     const LINKS = {
       linkedin: "https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/",
@@ -698,7 +677,6 @@
       whatsappNumber: "923097502122",
       whatsappPrefill: "Hi Abdul, I want help with GoHighLevel setup (funnels, CRM, automations).",
 
-      // KEEP CALENDAR LINK SAME AS NOW:
       calendar: "https://link.romatechnologies.com/widget/booking/bzMxJvwGL0LammXXjigv",
 
       funnelUrls: [
@@ -714,19 +692,15 @@
 
     const setHref = (id, url) => { const el = document.getElementById(id); if (el) el.href = url; };
 
-    // Social links (desktop/mobile/footer)
     ["navLinkedIn","mLinkedIn","footerLinkedIn"].forEach(id => setHref(id, LINKS.linkedin));
     ["navFacebook","mFacebook","footerFacebook"].forEach(id => setHref(id, LINKS.facebook));
     ["navInstagram","mInstagram","footerInstagram"].forEach(id => setHref(id, LINKS.instagram));
 
-    // WhatsApp links
     const wa = waLink();
     ["heroWhatsApp","contactWhatsApp","footerWhatsApp","packagesWhatsApp"].forEach(id => setHref(id, wa));
 
-    // Calendar links (keep same)
     ["heroCalendar","contactCalendar","footerCalendar"].forEach(id => setHref(id, LINKS.calendar));
 
-    // Funnel links
     document.querySelectorAll(".funnelLink").forEach((a, idx) => { a.href = LINKS.funnelUrls[idx] || "#"; });
 
     // Mobile menu
@@ -825,32 +799,69 @@
     tabBtns.forEach(btn => btn.addEventListener("click", () => showTab(btn.getAttribute("data-tab"))));
     showTab("funnels");
 
-    // Rotating services text (Hero)
-    const SERVICES = ["Funnels", "CRM Pipelines", "Automations", "Calendars", "SMS/Email Follow-ups", "Lead Nurture"];
-    const elA = document.getElementById("serviceA");
-    const elB = document.getElementById("serviceB");
-    let idx = 0;
-    let showingA = true;
+    // =========================
+    // Typewriter (Hero)
+    // =========================
+    (function () {
+      const words = [
+        "Funnels",
+        "CRM Pipelines",
+        "Automations",
+        "Calendars",
+        "SMS/Email Follow-ups",
+        "Lead Nurture"
+      ];
 
-    function setText(el, txt){ el.textContent = txt; }
-    function swap(){
-      const current = showingA ? elA : elB;
-      const next    = showingA ? elB : elA;
+      const el = document.getElementById("typeText");
+      if (!el) return;
 
-      idx = (idx + 1) % SERVICES.length;
-      setText(next, SERVICES[idx]);
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        el.textContent = words[0];
+        return;
+      }
 
-      next.className = "next";
-      requestAnimationFrame(() => {
-        current.className = "out";
-        next.className = "in";
-        showingA = !showingA;
-      });
-    }
+      let w = 0;
+      let i = 0;
+      let deleting = false;
 
-    setText(elA, SERVICES[0]);
-    setText(elB, SERVICES[1]);
-    setInterval(swap, 2200);
+      const typeSpeed = 55;
+      const deleteSpeed = 32;
+      const holdTime = 900;
+      const gapTime  = 260;
+
+      function tick() {
+        const word = words[w];
+
+        if (!deleting) {
+          i++;
+          el.textContent = word.slice(0, i);
+
+          if (i === word.length) {
+            setTimeout(() => {
+              deleting = true;
+              tick();
+            }, holdTime);
+            return;
+          }
+
+          setTimeout(tick, typeSpeed);
+        } else {
+          i--;
+          el.textContent = word.slice(0, Math.max(i, 0));
+
+          if (i <= 0) {
+            deleting = false;
+            w = (w + 1) % words.length;
+            setTimeout(tick, gapTime);
+            return;
+          }
+
+          setTimeout(tick, deleteSpeed);
+        }
+      }
+
+      tick();
+    })();
   </script>
 </body>
 </html>
