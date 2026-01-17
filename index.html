@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,6 +10,7 @@
   <title>Abdul Kalam — GoHighLevel (GHL) Funnels, CRM & Automations Specialist</title>
   <meta name="description" content="Abdul Kalam builds automation-first GoHighLevel systems (funnels, CRM pipelines, calendars, workflows) that capture leads, follow up, and book appointments automatically. Free consultation." />
   <meta name="robots" content="index,follow" />
+  <!-- IMPORTANT: replace with your real domain after buying -->
   <link rel="canonical" href="https://YOURDOMAIN.COM/" />
 
   <!-- Open Graph -->
@@ -24,23 +25,6 @@
   <meta name="twitter:title" content="Abdul Kalam — GoHighLevel Systems Specialist" />
   <meta name="twitter:description" content="Funnels • CRM Pipelines • Automations • Calendars • Messaging (A2P 10DLC-ready). Book a free consultation." />
   <meta name="twitter:image" content="https://YOURDOMAIN.COM/og-image.jpg" />
-
-  <!-- IMPORTANT: Tailwind config MUST be before the CDN script -->
-  <script>
-    // Dark mode via class so we can toggle
-    tailwind = {
-      config: {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['ui-sans-serif','system-ui','Inter','Segoe UI','Roboto','Helvetica','Arial']
-            }
-          }
-        }
-      }
-    };
-  </script>
 
   <!-- Tailwind CDN (single HTML file) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -63,6 +47,29 @@
   </script>
 
   <style>
+     /* ...keep your existing theme CSS... */
+
+  /* Fix: any hard-coded white text in light mode */
+  html.light .text-white{ color: #0f172a !important; }                 /* slate-900 */
+  html.light .text-emerald-200{ color: rgb(6 95 70) !important; }      /* emerald-800 */
+  html.light .text-emerald-300{ color: rgb(5 150 105) !important; }    /* emerald-600 */
+  html.light .text-blue-300{ color: rgb(29 78 216) !important; }       /* blue-700 */
+
+  /* Fix: black/transparent chips & badges that relied on dark background */
+  html.light .bg-black\/35{ background: rgba(15,23,42,.08) !important; }
+  html.light .bg-emerald-500\/20{ background: rgba(16,185,129,.14) !important; }
+  html.light .bg-white\/10{ background: rgba(15,23,42,.08) !important; }
+  html.light .bg-white\/8{ background: rgba(15,23,42,.06) !important; }
+
+  /* Fix: gradients that made text look washed out in light mode */
+  html.light .from-slate-950\/70{ --tw-gradient-from: rgba(15,23,42,.25) !important; }
+  html.light .via-slate-950\/10{ --tw-gradient-via: rgba(15,23,42,.06) !important; }
+
+  /* Fix: icon buttons & pills */
+  html.light .bg-slate-950\/70{ background: rgba(248,250,252,.75) !important; }
+
+  /* Optional: make rings slightly stronger in light for contrast */
+  html.light .ring-white\/10{ --tw-ring-color: rgba(15,23,42,.14) !important; }
     /* Smooth reveal */
     .reveal { opacity: 0; transform: translateY(14px); transition: .6s ease; }
     .reveal.in { opacity: 1; transform: translateY(0); }
@@ -134,20 +141,65 @@
       .shine::after { animation: none; }
       .typeCursor { animation: none; }
     }
+    <style>
+  /* ...your existing CSS... */
+
+  /* =========================
+     THEME (Light / Dark)
+     We toggle .light on <html>
+     ========================= */
+  html.light body{
+    background: #f8fafc; /* slate-50 */
+    color: #0f172a;      /* slate-900 */
+  }
+
+  /* navbar in light */
+  html.light header{
+    background: rgba(248,250,252,.75) !important;
+    border-color: rgba(15,23,42,.08) !important;
+  }
+
+  /* global text helpers */
+  html.light .text-slate-300{ color: rgba(15,23,42,.72) !important; }
+  html.light .text-slate-400{ color: rgba(15,23,42,.55) !important; }
+  html.light .text-slate-200{ color: rgba(15,23,42,.72) !important; }
+  html.light .text-slate-100{ color: rgba(15,23,42,.92) !important; }
+
+  /* cards/rings in light */
+  html.light .bg-white\/4{ background: rgba(15,23,42,.04) !important; }
+  html.light .bg-white\/5{ background: rgba(15,23,42,.06) !important; }
+  html.light .bg-white\/6{ background: rgba(15,23,42,.07) !important; }
+  html.light .ring-white\/10{ --tw-ring-color: rgba(15,23,42,.10) !important; }
+  html.light .border-white\/5{ border-color: rgba(15,23,42,.08) !important; }
+
+  /* keep hero glow but softer in light */
+  html.light .glow::before{
+    opacity: .65;
+  }
+
+  /* Optional: reduce heavy dark gradients on light */
+  html.light .bg-slate-950{
+    background: #f8fafc !important;
+  }
+</style>
+
   </style>
 
-  <!-- Prevent flash: apply saved theme before paint -->
   <script>
-    (function() {
-      const saved = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const useDark = saved ? (saved === "dark") : prefersDark;
-      document.documentElement.classList.toggle("dark", useDark);
-    })();
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['ui-sans-serif','system-ui','Inter','Segoe UI','Roboto','Helvetica','Arial']
+          }
+        }
+      }
+    }
   </script>
 </head>
 
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans">
+<body class="bg-slate-950 text-slate-100 font-sans transition-colors duration-300">
+
   <!-- Page background glow -->
   <div class="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
     <div class="absolute -top-44 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl"></div>
@@ -156,70 +208,71 @@
   </div>
 
   <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 bg-white/70 dark:bg-slate-950/70 backdrop-blur border-b border-slate-900/10 dark:border-white/5">
+  <header class="sticky top-0 z-40 bg-slate-950/70 backdrop-blur border-b border-white/5">
     <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
       <a href="#about" class="flex items-center gap-2">
-        <div class="h-9 w-9 rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 grid place-items-center">
-          <span class="text-sm font-semibold text-slate-800 dark:text-slate-100">AK</span>
+        <div class="h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 grid place-items-center">
+          <span class="text-sm font-semibold">AK</span>
         </div>
         <div class="leading-tight">
-          <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Abdul Kalam</div>
-          <div class="text-xs text-slate-600 dark:text-slate-400">GoHighLevel Funnels • CRM • Automations</div>
+          <div class="text-sm font-semibold">Abdul Kalam</div>
+          <div class="text-xs text-slate-400">GoHighLevel Funnels • CRM • Automations</div>
         </div>
       </a>
 
-      <div class="hidden md:flex items-center gap-6 text-sm text-slate-700 dark:text-slate-300">
-        <a class="hover:text-slate-900 dark:hover:text-white transition" href="#about">About</a>
-        <a class="hover:text-slate-900 dark:hover:text-white transition" href="#services">Services</a>
-        <a class="hover:text-slate-900 dark:hover:text-white transition" href="#packages">Packages</a>
-        <a class="hover:text-slate-900 dark:hover:text-white transition" href="#work">Work Proof</a>
-        <a class="hover:text-slate-900 dark:hover:text-white transition" href="#contact">Contact</a>
+      <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a class="hover:text-white transition" href="#about">About</a>
+        <a class="hover:text-white transition" href="#services">Services</a>
+        <a class="hover:text-white transition" href="#packages">Packages</a>
+        <a class="hover:text-white transition" href="#work">Work Proof</a>
+        <a class="hover:text-white transition" href="#contact">Contact</a>
       </div>
+      <!-- Theme Toggle -->
+<button id="themeToggle"
+  class="inline-flex h-10 items-center gap-2 rounded-xl bg-white/5 px-3 ring-1 ring-white/10 hover:bg-white/10 transition"
+  aria-label="Toggle theme"
+  title="Toggle dark/light">
+  <span id="themeIcon" class="text-base">🌙</span>
+  <span id="themeText" class="hidden sm:inline text-sm font-semibold text-slate-200">Dark</span>
+</button>
+
 
       <div class="flex items-center gap-2">
-        <!-- Theme toggle -->
-        <button id="themeToggle"
-          class="inline-flex items-center gap-2 rounded-xl bg-slate-900/5 dark:bg-white/5 px-3 py-2 text-sm font-semibold ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition"
-          aria-label="Toggle theme">
-          <span id="themeIcon">🌙</span>
-          <span id="themeLabel">Dark</span>
-        </button>
-
         <!-- Social Icons -->
         <a id="navLinkedIn" href="https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/" target="_blank" rel="noopener"
-           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition"
+           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
            aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800 dark:text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.05C12 8.9 13.6 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V24h-4v-8.9c0-2.1 0-4.8-2.9-4.8-2.9 0-3.4 2.3-3.4 4.6V24h-4V8Z"/>
           </svg>
         </a>
 
         <a id="navFacebook" href="https://web.facebook.com/profile.php?id=100076966325420" target="_blank" rel="noopener"
-           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition"
+           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
            aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800 dark:text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/>
           </svg>
         </a>
 
         <a id="navInstagram" href="https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5" target="_blank" rel="noopener"
-           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition"
+           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
            aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800 dark:text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.7-.9a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
           </svg>
         </a>
 
         <a id="navResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank" rel="noopener"
-           class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-slate-900/5 dark:bg-white/5 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-slate-100 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">
+           class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
           Resume
         </a>
 
         <!-- Mobile menu button -->
         <button id="mobileBtn"
-                class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition"
+                class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
                 aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800 dark:text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -227,23 +280,23 @@
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-900/10 dark:border-white/5">
-      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-1 text-sm text-slate-700 dark:text-slate-300">
-        <a class="rounded-lg px-3 py-2 hover:bg-slate-900/5 dark:hover:bg-white/5" href="#about">About</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-slate-900/5 dark:hover:bg-white/5" href="#services">Services</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-slate-900/5 dark:hover:bg-white/5" href="#packages">Packages</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-slate-900/5 dark:hover:bg-white/5" href="#work">Work Proof</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-slate-900/5 dark:hover:bg-white/5" href="#contact">Contact</a>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-1 text-sm text-slate-300">
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#about">About</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#services">Services</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#packages">Packages</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#work">Work Proof</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact</a>
 
         <a id="mResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank" rel="noopener"
-           class="rounded-xl bg-slate-900/5 dark:bg-white/5 px-4 py-3 text-center font-semibold ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">
+           class="rounded-xl bg-white/5 px-4 py-3 text-center font-semibold ring-1 ring-white/10 hover:bg-white/10 transition">
           Resume
         </a>
 
         <div class="mt-2 grid grid-cols-3 gap-2">
-          <a id="mLinkedIn" href="#" target="_blank" rel="noopener" class="rounded-xl bg-slate-900/5 dark:bg-white/5 px-3 py-3 text-center ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">LinkedIn</a>
-          <a id="mFacebook" href="#" target="_blank" rel="noopener" class="rounded-xl bg-slate-900/5 dark:bg-white/5 px-3 py-3 text-center ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">Facebook</a>
-          <a id="mInstagram" href="#" target="_blank" rel="noopener" class="rounded-xl bg-slate-900/5 dark:bg-white/5 px-3 py-3 text-center ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">Instagram</a>
+          <a id="mLinkedIn" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">LinkedIn</a>
+          <a id="mFacebook" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Facebook</a>
+          <a id="mInstagram" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Instagram</a>
         </div>
       </div>
     </div>
@@ -252,50 +305,50 @@
   <!-- ABOUT / HERO -->
   <section id="about" class="relative">
     <div class="mx-auto max-w-7xl px-4 pt-10 pb-8 md:pt-14">
-      <div class="glow reveal rounded-[24px] bg-gradient-to-b from-slate-900/5 to-slate-900/0 dark:from-white/6 dark:to-white/2 ring-1 ring-slate-900/10 dark:ring-white/10 overflow-hidden">
+      <div class="glow reveal rounded-[24px] bg-gradient-to-b from-white/6 to-white/2 ring-1 ring-white/10 overflow-hidden">
         <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
           <!-- Left -->
           <div>
-            <div class="text-xs tracking-wider text-emerald-700 dark:text-emerald-300/90 font-semibold">
+            <div class="text-xs tracking-wider text-emerald-300/90 font-semibold">
               GoHighLevel Systems Specialist
             </div>
 
-            <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15] text-slate-900 dark:text-slate-100">
-              I Build <span class="text-emerald-600 dark:text-emerald-300">High-Converting</span>
-              <span class="text-slate-900 dark:text-slate-100">Systems</span> inside
-              <span class="text-blue-600 dark:text-blue-300">GoHighLevel</span>
+            <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-[1.15]">
+              I Build <span class="text-emerald-300">High-Converting</span>
+              <span class="text-slate-100">Systems</span> inside
+              <span class="text-blue-300">GoHighLevel</span>
             </h1>
 
             <!-- Typewriter supporting line -->
             <div class="mt-2 h-[1.35em] overflow-hidden">
-              <span class="typeLine text-blue-700 dark:text-blue-300 font-semibold text-lg">
-                <span class="text-slate-500 dark:text-slate-300/80 mr-1">→</span>
+              <span class="typeLine text-blue-300 font-semibold text-lg">
+                <span class="text-slate-300/80 mr-1">→</span>
                 <span id="typeText"></span>
                 <span class="typeCursor" aria-hidden="true"></span>
               </span>
             </div>
 
-            <p class="mt-4 text-slate-700 dark:text-slate-300 leading-relaxed max-w-xl">
+            <p class="mt-4 text-slate-300 leading-relaxed max-w-xl">
               Automation-first funnels, CRM pipelines, and follow-ups that turn leads into booked appointments — with less manual work.
             </p>
 
             <div class="mt-4 flex flex-wrap gap-2 text-xs">
-              <span class="rounded-full bg-slate-900/5 dark:bg-white/5 px-3 py-1 ring-1 ring-slate-900/10 dark:ring-white/10 text-slate-800 dark:text-slate-200">
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">
                 Lead capture → follow-up → booking
               </span>
-              <span class="rounded-full bg-slate-900/5 dark:bg-white/5 px-3 py-1 ring-1 ring-slate-900/10 dark:ring-white/10 text-slate-800 dark:text-slate-200">
+              <span class="rounded-full bg-white/5 px-3 py-1 ring-1 ring-white/10 text-slate-200">
                 Compliance-ready messaging
               </span>
             </div>
 
             <div class="mt-6 flex flex-col sm:flex-row gap-3">
               <a id="heroCalendar" href="#"
-                 class="inline-flex items-center justify-center rounded-xl bg-emerald-600 dark:bg-emerald-500 px-6 py-3 font-semibold text-white dark:text-slate-950 hover:bg-emerald-500 dark:hover:bg-emerald-400 transition">
+                 class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
                 Book a GHL Setup Call
               </a>
 
               <a id="heroWhatsApp" href="#" target="_blank" rel="noopener"
-                 class="inline-flex items-center justify-center rounded-xl bg-slate-900/5 dark:bg-white/5 px-6 py-3 font-semibold text-slate-900 dark:text-slate-100 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">
+                 class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
                 WhatsApp (Quick Quote)
               </a>
             </div>
@@ -304,15 +357,17 @@
 
           <!-- Right: YOUR PHOTO ONLY -->
           <div class="relative">
-            <div class="relative rounded-3xl overflow-hidden ring-1 ring-slate-900/10 dark:ring-white/10 bg-slate-900/5 dark:bg-white/5">
+            <div class="relative rounded-3xl overflow-hidden ring-1 ring-white/10 bg-white/5">
               <img
-                src="AK.png"
-                alt="Abdul Kalam, GoHighLevel systems specialist building CRM pipelines and automation workflows"
-                title="Abdul Kalam – GoHighLevel Automation Specialist"
-                class="w-full h-[360px] md:h-[420px] object-cover object-top opacity-95"
-                loading="lazy"
-                decoding="async"
-              />
+           <img
+  src="AK.png"
+  alt="Abdul Kalam, GoHighLevel systems specialist building CRM pipelines and automation workflows"
+  title="Abdul Kalam – GoHighLevel Automation Specialist"
+  class="w-full h-[360px] md:h-[420px] object-cover object-top opacity-95"
+  loading="lazy"
+  decoding="async"
+/>
+
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
 
               <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2">
@@ -325,14 +380,14 @@
               </div>
             </div>
 
-            <div class="mt-3 text-xs text-slate-600 dark:text-slate-400">
+            <div class="mt-3 text-xs text-slate-400">
               Available for remote setup & optimization • Response within 24 hours
             </div>
           </div>
           <!-- /Right -->
         </div>
 
-        <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/10 dark:to-slate-950/25"></div>
+        <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/25"></div>
       </div>
     </div>
   </section>
@@ -340,71 +395,71 @@
   <!-- SERVICES -->
   <section id="services" class="mx-auto max-w-7xl px-4 py-10">
     <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Services</h2>
-      <p class="mt-2 text-slate-700 dark:text-slate-300">Everything below is built inside GoHighLevel — clean setup, automation-first, and launch-ready.</p>
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Services</h2>
+      <p class="mt-2 text-slate-300">Everything below is built inside GoHighLevel — clean setup, automation-first, and launch-ready.</p>
     </div>
 
-    <div class="reveal mt-6 rounded-3xl bg-slate-900/5 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10 p-6 md:p-8">
+    <div class="reveal mt-6 rounded-3xl bg-white/4 ring-1 ring-white/10 p-6 md:p-8">
       <div class="flex items-center justify-between mb-4">
-        <div class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400">What I Set Up</div>
-        <div class="text-[11px] text-slate-600 dark:text-slate-400">Inside GoHighLevel</div>
+        <div class="text-xs uppercase tracking-wider text-slate-400">What I Set Up</div>
+        <div class="text-[11px] text-slate-400">Inside GoHighLevel</div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <div class="lift rounded-2xl bg-white/70 dark:bg-white/4 p-4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+          <div class="flex items-center gap-3 text-sm font-semibold">
             <span class="h-10 w-10 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">🧩</span>
             Funnel Builder
           </div>
-          <div class="mt-2 text-sm text-slate-700 dark:text-slate-300">Landing pages, forms, thank-you pages, and conversion flow.</div>
+          <div class="mt-2 text-sm text-slate-300">Landing pages, forms, thank-you pages, and conversion flow.</div>
         </div>
 
-        <div class="lift rounded-2xl bg-white/70 dark:bg-white/4 p-4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+          <div class="flex items-center gap-3 text-sm font-semibold">
             <span class="h-10 w-10 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center">⚙️</span>
             CRM Setup
           </div>
-          <div class="mt-2 text-sm text-slate-700 dark:text-slate-300">Custom fields, smart lead routing, and clean data structure.</div>
+          <div class="mt-2 text-sm text-slate-300">Custom fields, smart lead routing, and clean data structure.</div>
         </div>
 
-        <div class="lift rounded-2xl bg-white/70 dark:bg-white/4 p-4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+          <div class="flex items-center gap-3 text-sm font-semibold">
             <span class="h-10 w-10 rounded-xl bg-blue-500/10 ring-1 ring-blue-400/20 grid place-items-center">🔁</span>
             Workflows
           </div>
-          <div class="mt-2 text-sm text-slate-700 dark:text-slate-300">Automated follow-ups, notifications, nurturing sequences.</div>
+          <div class="mt-2 text-sm text-slate-300">Automated follow-ups, notifications, nurturing sequences.</div>
         </div>
 
-        <div class="lift rounded-2xl bg-white/70 dark:bg-white/4 p-4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+          <div class="flex items-center gap-3 text-sm font-semibold">
             <span class="h-10 w-10 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center">📌</span>
             Pipelines
           </div>
-          <div class="mt-2 text-sm text-slate-700 dark:text-slate-300">Stages, automations, tasks, and visibility on every lead.</div>
+          <div class="mt-2 text-sm text-slate-300">Stages, automations, tasks, and visibility on every lead.</div>
         </div>
 
-        <div class="lift rounded-2xl bg-white/70 dark:bg-white/4 p-4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+          <div class="flex items-center gap-3 text-sm font-semibold">
             <span class="h-10 w-10 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">📅</span>
             Calendars
           </div>
-          <div class="mt-2 text-sm text-slate-700 dark:text-slate-300">Booking flows, reminders, reschedules, confirmations.</div>
+          <div class="mt-2 text-sm text-slate-300">Booking flows, reminders, reschedules, confirmations.</div>
         </div>
 
-        <div class="lift rounded-2xl bg-white/70 dark:bg-white/4 p-4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10">
+          <div class="flex items-center gap-3 text-sm font-semibold">
             <span class="h-10 w-10 rounded-xl bg-purple-500/10 ring-1 ring-purple-400/20 grid place-items-center">✉️</span>
             SMS/Email
           </div>
-          <div class="mt-2 text-sm text-slate-700 dark:text-slate-300">Templates, timing, opt-out handling, deliverability basics.</div>
+          <div class="mt-2 text-sm text-slate-300">Templates, timing, opt-out handling, deliverability basics.</div>
         </div>
 
-        <div class="lift rounded-2xl bg-white/70 dark:bg-white/4 p-4 ring-1 ring-slate-900/10 dark:ring-white/10 sm:col-span-2 lg:col-span-3">
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-900 dark:text-slate-100">
+        <div class="lift rounded-2xl bg-white/4 p-4 ring-1 ring-white/10 sm:col-span-2 lg:col-span-3">
+          <div class="flex items-center gap-3 text-sm font-semibold">
             <span class="h-10 w-10 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">✅</span>
             A2P 10DLC Ready (Compliance)
           </div>
-          <div class="mt-2 text-sm text-slate-700 dark:text-slate-300">Messaging compliance setup for US SMS campaigns and safer sending.</div>
+          <div class="mt-2 text-sm text-slate-300">Messaging compliance setup for US SMS campaigns and safer sending.</div>
         </div>
       </div>
     </div>
@@ -413,15 +468,15 @@
   <!-- PACKAGES -->
   <section id="packages" class="mx-auto max-w-7xl px-4 py-10">
     <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Packages (GHL Only)</h2>
-      <p class="mt-2 text-slate-700 dark:text-slate-300">Simple, clear deliverables. Pick what you need — I’ll handle the build inside GoHighLevel.</p>
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Packages (GHL Only)</h2>
+      <p class="mt-2 text-slate-300">Simple, clear deliverables. Pick what you need — I’ll handle the build inside GoHighLevel.</p>
     </div>
 
     <div class="mt-6 grid gap-4 md:grid-cols-4">
-      <div class="reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-6 ring-1 ring-slate-900/10 dark:ring-white/10">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Starter Setup</div>
-        <div class="mt-1 text-xs text-slate-600 dark:text-slate-400">Best for new GHL accounts</div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-800 dark:text-slate-200/90">
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+        <div class="text-sm font-semibold">Starter Setup</div>
+        <div class="mt-1 text-xs text-slate-400">Best for new GHL accounts</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
           <li>• CRM basics + custom fields</li>
           <li>• Pipeline stages</li>
           <li>• Calendar + booking flow</li>
@@ -429,10 +484,10 @@
         </ul>
       </div>
 
-      <div class="reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-6 ring-1 ring-slate-900/10 dark:ring-white/10">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Automation Setup</div>
-        <div class="mt-1 text-xs text-slate-600 dark:text-slate-400">Stop lead leakage</div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-800 dark:text-slate-200/90">
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+        <div class="text-sm font-semibold">Automation Setup</div>
+        <div class="mt-1 text-xs text-slate-400">Stop lead leakage</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
           <li>• Workflows (SMS/Email)</li>
           <li>• Missed-call text back</li>
           <li>• Lead nurture sequences</li>
@@ -440,10 +495,10 @@
         </ul>
       </div>
 
-      <div class="reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-6 ring-1 ring-slate-900/10 dark:ring-white/10">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Funnel + Booking</div>
-        <div class="mt-1 text-xs text-slate-600 dark:text-slate-400">High-converting flow</div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-800 dark:text-slate-200/90">
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
+        <div class="text-sm font-semibold">Funnel + Booking</div>
+        <div class="mt-1 text-xs text-slate-400">High-converting flow</div>
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
           <li>• Landing page + form</li>
           <li>• Thank-you page + CTA</li>
           <li>• Calendar integration</li>
@@ -451,15 +506,15 @@
         </ul>
       </div>
 
-      <div class="reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-6 ring-1 ring-slate-900/10 dark:ring-white/10">
+      <div class="reveal lift rounded-2xl bg-white/4 p-6 ring-1 ring-white/10">
         <div class="flex items-center justify-between">
           <div>
-            <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Full Growth System</div>
-            <div class="mt-1 text-xs text-slate-600 dark:text-slate-400">Most complete build</div>
+            <div class="text-sm font-semibold">Full Growth System</div>
+            <div class="mt-1 text-xs text-slate-400">Most complete build</div>
           </div>
-          <span class="text-xs text-emerald-700 dark:text-emerald-200 bg-emerald-500/15 dark:bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Best</span>
+          <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Best</span>
         </div>
-        <ul class="mt-4 space-y-2 text-sm text-slate-800 dark:text-slate-200/90">
+        <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
           <li>• Funnel + CRM + pipeline</li>
           <li>• Automations + nurturing</li>
           <li>• Messaging templates</li>
@@ -470,284 +525,386 @@
 
     <div class="reveal mt-6 flex flex-col sm:flex-row gap-3">
       <a href="#contact"
-         class="inline-flex items-center justify-center rounded-xl bg-emerald-600 dark:bg-emerald-500 px-6 py-3 font-semibold text-white dark:text-slate-950 hover:bg-emerald-500 dark:hover:bg-emerald-400 transition">
+         class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
         Get a Custom Plan (Free Call)
       </a>
       <a id="packagesWhatsApp" href="#" target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center rounded-xl bg-slate-900/5 dark:bg-white/5 px-6 py-3 font-semibold text-slate-900 dark:text-slate-100 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">
+         class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
         WhatsApp (Tell Me Your Goal)
       </a>
     </div>
   </section>
 
-  <!-- WORK PROOF -->
-  <section id="work" class="mx-auto max-w-7xl px-4 py-10">
-    <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Work Proof</h2>
-      <p class="mt-2 text-slate-700 dark:text-slate-300">Funnels, automations, and internal setups. Click to view.</p>
-    </div>
+ <!-- WORK PROOF (UPDATED) -->
+<section id="work" class="mx-auto max-w-7xl px-4 py-10">
+  <div class="reveal">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Work Proof</h2>
+    <p class="mt-2 text-slate-300">
+      Funnels, automations, and internal setups. Click to view.
+    </p>
+  </div>
 
-    <div class="reveal mt-6 flex flex-wrap gap-2">
-      <button data-tab="funnels" class="tabBtn rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25">Funnels</button>
-      <button data-tab="automations" class="tabBtn rounded-full bg-slate-900/5 dark:bg-white/5 text-slate-800 dark:text-slate-200 px-4 py-2 text-sm ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">Automations</button>
-      <button data-tab="agents" class="tabBtn rounded-full bg-slate-900/5 dark:bg-white/5 text-slate-800 dark:text-slate-200 px-4 py-2 text-sm ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">AI (Inside GHL)</button>
-    </div>
+  <!-- Tabs -->
+  <div class="reveal mt-6 flex flex-wrap items-center gap-2">
+    <button data-tab="funnels"
+      class="tabBtn rounded-full bg-emerald-500/15 text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25">
+      Funnels
+    </button>
+    <button data-tab="automations"
+      class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10 transition">
+      Automations
+    </button>
+    <button data-tab="agents"
+      class="tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10 transition">
+      AI (Inside GHL)
+    </button>
+  </div>
 
-    <div id="tab-funnels" class="mt-6 grid gap-4 md:grid-cols-3">
-      <a href="#" target="_blank" rel="noopener" class="funnelLink shine group reveal rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10 overflow-hidden hover:bg-white/90 dark:hover:bg-white/8 transition">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80"
-               class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Booking funnel preview – lead capture to booking flow"
-               title="Booking Funnel preview"
-               loading="lazy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-            <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
-            <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
-          </div>
+  <!-- FUNNELS -->
+  <div id="tab-funnels" class="mt-6 grid gap-4 md:grid-cols-3">
+    <a href="#" target="_blank" rel="noopener"
+      class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition"
+      aria-label="Open Booking Funnel preview">
+      <div class="relative h-44 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80"
+          class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
+          alt="Booking funnel preview – lead capture to booking flow"
+          title="Booking Funnel preview"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+          <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
+          <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
         </div>
-        <div class="p-5">
-          <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Booking Funnel</div>
-          <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Lead capture → follow-up → booking</div>
+      </div>
+      <div class="p-5">
+        <div class="text-sm font-semibold">Booking Funnel</div>
+        <div class="mt-1 text-sm text-slate-300">Lead capture → follow-up → booking</div>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" rel="noopener"
+      class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition"
+      aria-label="Open Lead Gen Funnel preview">
+      <div class="relative h-44 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"
+          class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
+          alt="Lead generation funnel preview – form submission, pipeline update and nurturing"
+          title="Lead Gen Funnel preview"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+          <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
+          <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
         </div>
-      </a>
+      </div>
+      <div class="p-5">
+        <div class="text-sm font-semibold">Lead Gen Funnel</div>
+        <div class="mt-1 text-sm text-slate-300">Form → pipeline → nurture</div>
+      </div>
+    </a>
 
-      <a href="#" target="_blank" rel="noopener" class="funnelLink shine group reveal rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10 overflow-hidden hover:bg-white/90 dark:hover:bg-white/8 transition">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"
-               class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Lead generation funnel preview – form submission, pipeline update and nurturing"
-               title="Lead Gen Funnel preview"
-               loading="lazy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-            <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
-            <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
-          </div>
+    <a href="#" target="_blank" rel="noopener"
+      class="funnelLink shine group reveal rounded-2xl bg-white/4 ring-1 ring-white/10 overflow-hidden hover:bg-white/8 transition"
+      aria-label="Open Offer Funnel preview">
+      <div class="relative h-44 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1400&q=80"
+          class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
+          alt="Offer funnel preview – offer page, booking and confirmation flow"
+          title="Offer Funnel preview"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
+        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+          <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
+          <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
         </div>
-        <div class="p-5">
-          <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Lead Gen Funnel</div>
-          <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Form → pipeline → nurture</div>
+      </div>
+      <div class="p-5">
+        <div class="text-sm font-semibold">Offer Funnel</div>
+        <div class="mt-1 text-sm text-slate-300">Offer page → booking → confirmation</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- AUTOMATIONS -->
+  <div id="tab-automations" class="hidden mt-6 grid gap-4 md:grid-cols-3">
+    <button
+      class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition text-left"
+      data-title="Workflow Automation (GoHighLevel)"
+      data-desc="Trigger → If/Else → tags → pipeline updates → SMS/email follow-ups."
+      data-images="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80"
+      aria-label="Open Workflows proof modal">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="text-sm font-semibold">Workflows</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
         </div>
-      </a>
+        <span class="text-xs text-slate-300 bg-white/5 px-2 py-1 rounded-full ring-1 ring-white/10">Modal</span>
+      </div>
+    </button>
 
-      <a href="#" target="_blank" rel="noopener" class="funnelLink shine group reveal rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10 overflow-hidden hover:bg-white/90 dark:hover:bg-white/8 transition">
-        <div class="relative h-44 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1400&q=80"
-               class="h-full w-full object-cover opacity-90 group-hover:scale-[1.03] transition duration-300"
-               alt="Offer funnel preview – offer page, booking and confirmation flow"
-               title="Offer Funnel preview"
-               loading="lazy"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-            <span class="text-xs text-slate-200 bg-black/35 px-2 py-1 rounded-full ring-1 ring-white/10">Funnel</span>
-            <span class="text-xs text-emerald-200 bg-emerald-500/20 px-2 py-1 rounded-full ring-1 ring-emerald-400/25">Click to open</span>
-          </div>
+    <button
+      class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition text-left"
+      data-title="Pipeline Automation (GoHighLevel)"
+      data-desc="Stage automation + task creation + staff alerts."
+      data-images="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=80"
+      aria-label="Open Pipelines proof modal">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="text-sm font-semibold">Pipelines</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
         </div>
-        <div class="p-5">
-          <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Offer Funnel</div>
-          <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Offer page → booking → confirmation</div>
+        <span class="text-xs text-slate-300 bg-white/5 px-2 py-1 rounded-full ring-1 ring-white/10">Modal</span>
+      </div>
+    </button>
+
+    <button
+      class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition text-left"
+      data-title="Messaging + A2P 10DLC (GoHighLevel)"
+      data-desc="Compliance-ready templates + opt-out handling + deliverability basics."
+      data-images="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=1400&q=80"
+      aria-label="Open Messaging & A2P proof modal">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="text-sm font-semibold">Messaging / A2P</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view screenshots</div>
         </div>
-      </a>
-    </div>
+        <span class="text-xs text-slate-300 bg-white/5 px-2 py-1 rounded-full ring-1 ring-white/10">Modal</span>
+      </div>
+    </button>
+  </div>
 
-    <div id="tab-automations" class="hidden mt-6 grid gap-4 md:grid-cols-3">
-      <button class="proofBtn reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/90 dark:hover:bg-white/10 transition text-left"
-              data-title="Workflow Automation (GoHighLevel)"
-              data-desc="Trigger → If/Else → tags → pipeline updates → SMS/email follow-ups."
-              data-images="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Workflows</div>
-        <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Click to view screenshots</div>
-      </button>
+  <!-- AI -->
+  <div id="tab-agents" class="hidden mt-6 grid gap-4 md:grid-cols-3">
+    <button
+      class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition text-left"
+      data-title="AI Chat (Inside GoHighLevel)"
+      data-desc="Qualification questions + tagging + booking handoff."
+      data-images="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80"
+      aria-label="Open AI Chat proof modal">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="text-sm font-semibold">AI Chat</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
+        </div>
+        <span class="text-xs text-slate-300 bg-white/5 px-2 py-1 rounded-full ring-1 ring-white/10">Modal</span>
+      </div>
+    </button>
 
-      <button class="proofBtn reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/90 dark:hover:bg-white/10 transition text-left"
-              data-title="Pipeline Automation (GoHighLevel)"
-              data-desc="Stage automation + task creation + staff alerts."
-              data-images="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Pipelines</div>
-        <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Click to view screenshots</div>
-      </button>
+    <button
+      class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition text-left"
+      data-title="AI-Assisted Follow-ups (Inside GHL)"
+      data-desc="Response suggestions + conversation routing + follow-up logic."
+      data-images="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80"
+      aria-label="Open AI Follow-ups proof modal">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="text-sm font-semibold">AI Follow-ups</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
+        </div>
+        <span class="text-xs text-slate-300 bg-white/5 px-2 py-1 rounded-full ring-1 ring-white/10">Modal</span>
+      </div>
+    </button>
 
-      <button class="proofBtn reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/90 dark:hover:bg-white/10 transition text-left"
-              data-title="Messaging + A2P 10DLC"
-              data-desc="Compliance-ready templates + opt-out handling + deliverability basics."
-              data-images="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1400&q=80,https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Messaging / A2P</div>
-        <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Click to view screenshots</div>
-      </button>
-    </div>
+    <button
+      class="proofBtn reveal lift rounded-2xl bg-white/4 p-5 ring-1 ring-white/10 hover:bg-white/10 transition text-left"
+      data-title="Prompt & Guardrails (Inside GHL)"
+      data-desc="Prompt structure + escalation rules + safe responses."
+      data-images="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80"
+      aria-label="Open Prompt & Guardrails proof modal">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <div class="text-sm font-semibold">Prompt & Rules</div>
+          <div class="mt-1 text-sm text-slate-300">Click to view proof</div>
+        </div>
+        <span class="text-xs text-slate-300 bg-white/5 px-2 py-1 rounded-full ring-1 ring-white/10">Modal</span>
+      </div>
+    </button>
+  </div>
 
-    <div id="tab-agents" class="hidden mt-6 grid gap-4 md:grid-cols-3">
-      <button class="proofBtn reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/90 dark:hover:bg-white/10 transition text-left"
-              data-title="AI Chat (Inside GHL)"
-              data-desc="Qualification questions + tagging + booking handoff."
-              data-images="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">AI Chat</div>
-        <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Click to view proof</div>
-      </button>
-
-      <button class="proofBtn reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/90 dark:hover:bg-white/10 transition text-left"
-              data-title="AI-Assisted Follow-ups"
-              data-desc="Response suggestions + conversation routing + follow-up logic."
-              data-images="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">AI Follow-ups</div>
-        <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Click to view proof</div>
-      </button>
-
-      <button class="proofBtn reveal lift rounded-2xl bg-white/70 dark:bg-white/4 p-5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/90 dark:hover:bg-white/10 transition text-left"
-              data-title="Prompt & Guardrails"
-              data-desc="Prompt structure + escalation rules + safe responses."
-              data-images="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1400&q=80">
-        <div class="text-sm font-semibold text-slate-900 dark:text-slate-100">Prompt & Rules</div>
-        <div class="mt-1 text-sm text-slate-700 dark:text-slate-300">Click to view proof</div>
-      </button>
-    </div>
-  </section>
+  <!-- JSON-LD for Images (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Abdul Kalam — GoHighLevel Work Proof",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Booking Funnel Preview",
+        "image": "https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1400&q=80"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Lead Gen Funnel Preview",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Offer Funnel Preview",
+        "image": "https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&w=1400&q=80"
+      }
+    ]
+  }
+  </script>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="mx-auto max-w-7xl px-4 py-12">
-    <div class="reveal glow rounded-[24px] bg-gradient-to-b from-emerald-500/10 to-slate-900/0 dark:to-white/2 ring-1 ring-emerald-400/20 overflow-hidden">
+    <div class="reveal glow rounded-[24px] bg-gradient-to-b from-emerald-500/10 to-white/2 ring-1 ring-emerald-400/15 overflow-hidden">
       <div class="p-6 md:p-10 grid gap-8 md:grid-cols-2 md:items-center">
         <div>
-          <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/5 dark:bg-white/6 px-3 py-1 text-xs text-slate-700 dark:text-slate-200 ring-1 ring-slate-900/10 dark:ring-white/10">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs text-slate-200 ring-1 ring-white/10">
             Free Consultation
           </div>
 
-          <h2 class="mt-4 text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-slate-900 dark:text-slate-100">
+          <h2 class="mt-4 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
             Ready to set up<br class="hidden sm:block"/>
-            <span class="text-emerald-700 dark:text-emerald-300">GoHighLevel correctly?</span>
+            <span class="text-emerald-300">GoHighLevel correctly?</span>
           </h2>
 
-          <ul class="mt-4 space-y-2 text-sm text-slate-800 dark:text-slate-200/90">
-            <li class="flex gap-2"><span class="text-emerald-600 dark:text-emerald-300">●</span> Quick call (15–30 minutes)</li>
-            <li class="flex gap-2"><span class="text-emerald-600 dark:text-emerald-300">●</span> Funnel + CRM automation plan</li>
-            <li class="flex gap-2"><span class="text-emerald-600 dark:text-emerald-300">●</span> Clear next steps + timeline</li>
+          <ul class="mt-4 space-y-2 text-sm text-slate-200/90">
+            <li class="flex gap-2"><span class="text-emerald-300">●</span> Quick call (15–30 minutes)</li>
+            <li class="flex gap-2"><span class="text-emerald-300">●</span> Funnel + CRM automation plan</li>
+            <li class="flex gap-2"><span class="text-emerald-300">●</span> Clear next steps + timeline</li>
           </ul>
 
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
             <a id="contactCalendar" href="#"
-               class="inline-flex items-center justify-center rounded-xl bg-emerald-600 dark:bg-emerald-500 px-6 py-3 font-semibold text-white dark:text-slate-950 hover:bg-emerald-500 dark:hover:bg-emerald-400 transition">
+               class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-400 transition">
               Book a GHL Setup Call
             </a>
 
             <a id="contactWhatsApp" href="#" target="_blank" rel="noopener"
-               class="inline-flex items-center justify-center rounded-xl bg-slate-900/5 dark:bg-white/5 px-6 py-3 font-semibold text-slate-900 dark:text-slate-100 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition">
+               class="inline-flex items-center justify-center rounded-xl bg-white/5 px-6 py-3 font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
               WhatsApp (Quick Quote)
             </a>
           </div>
 
-          <div class="mt-4 text-xs text-slate-600 dark:text-slate-400">
-            Email: <a class="text-slate-900 dark:text-slate-200 hover:text-black dark:hover:text-white transition" href="mailto:ghlexperts333@gmail.com">ghlexperts333@gmail.com</a>
+          <div class="mt-4 text-xs text-slate-400">
+            Email: <a class="text-slate-200 hover:text-white transition" href="mailto:ghlexperts333@gmail.com">ghlexperts333@gmail.com</a>
           </div>
         </div>
 
         <div class="flex justify-center md:justify-end">
           <div class="relative h-56 w-56 rounded-full bg-emerald-500/10 ring-1 ring-emerald-400/20 grid place-items-center">
-            <div class="absolute inset-6 rounded-full bg-white/70 dark:bg-slate-950/55 ring-1 ring-slate-900/10 dark:ring-white/10"></div>
+            <div class="absolute inset-6 rounded-full bg-slate-950/55 ring-1 ring-white/10"></div>
             <div class="relative text-center">
-              <div class="text-4xl font-semibold text-slate-900 dark:text-slate-100">30</div>
-              <div class="text-xs text-slate-600 dark:text-slate-300">minutes</div>
-              <div class="mt-4 text-xs text-slate-600 dark:text-slate-400">Response time:</div>
-              <div class="text-xs text-emerald-700 dark:text-emerald-300 font-semibold">Within 24 hours</div>
+              <div class="text-4xl font-semibold">30</div>
+              <div class="text-xs text-slate-300">minutes</div>
+              <div class="mt-4 text-xs text-slate-400">Response time:</div>
+              <div class="text-xs text-emerald-300 font-semibold">Within 24 hours</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/10 dark:to-slate-950/25"></div>
+      <div class="h-10 bg-gradient-to-b from-transparent to-slate-950/25"></div>
     </div>
   </section>
+  <!-- FAQ (add this section right before <footer> ) -->
+<section id="faqs" class="mx-auto max-w-7xl px-4 pb-12">
+  <div class="reveal">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">FAQs</h2>
+    <p class="mt-2 text-slate-300">Quick answers before you book.</p>
+  </div>
 
-  <!-- FAQ -->
-  <section id="faqs" class="mx-auto max-w-7xl px-4 pb-12">
-    <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">FAQs</h2>
-      <p class="mt-2 text-slate-700 dark:text-slate-300">Quick answers before you book.</p>
-    </div>
+  <div class="reveal mt-6 rounded-3xl bg-white/4 ring-1 ring-white/10 p-6 md:p-8">
+    <div class="space-y-3">
 
-    <div class="reveal mt-6 rounded-3xl bg-slate-900/5 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10 p-6 md:p-8">
-      <div class="space-y-3">
-
-        <div class="faqItem rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
-            <span class="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-100">What do you need from me before you start?</span>
-            <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 text-slate-800 dark:text-slate-200">+</span>
-          </button>
-          <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            Access to your GoHighLevel sub-account, your offer details (service, pricing, guarantee), and your preferred booking flow. If you already have assets (logo, colors, copy), I’ll use them — otherwise I’ll keep it clean and conversion-first.
-          </div>
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">What do you need from me before you start?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Access to your GoHighLevel sub-account, your offer details (service, pricing, guarantee), and your preferred booking flow. If you already have assets (logo, colors, copy), I’ll use them — otherwise I’ll keep it clean and conversion-first.
         </div>
-
-        <div class="faqItem rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
-            <span class="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-100">Can you fix an existing GHL setup instead of building from scratch?</span>
-            <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 text-slate-800 dark:text-slate-200">+</span>
-          </button>
-          <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            Yes. I can audit your funnels, pipelines, calendars, and workflows, then clean up triggers, tags, stages, and follow-up logic so leads don’t fall through the cracks.
-          </div>
-        </div>
-
-        <div class="faqItem rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
-            <span class="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-100">Do you set up SMS/Email follow-ups and compliance basics?</span>
-            <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 text-slate-800 dark:text-slate-200">+</span>
-          </button>
-          <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            Yes — I set up templates, timing, opt-out handling, and a clean workflow structure. For US numbers, I also help you get A2P 10DLC-ready (brand/campaign compliance flow).
-          </div>
-        </div>
-
-        <div class="faqItem rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
-            <span class="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-100">Will my team know how to use it after setup?</span>
-            <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 text-slate-800 dark:text-slate-200">+</span>
-          </button>
-          <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            Yes. I keep naming consistent, document key workflows, and can record a short walkthrough so your team knows where to update templates, stages, and calendars.
-          </div>
-        </div>
-
-        <div class="faqItem rounded-2xl bg-white/70 dark:bg-white/4 ring-1 ring-slate-900/10 dark:ring-white/10">
-          <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
-            <span class="text-sm md:text-base font-semibold text-slate-900 dark:text-slate-100">How fast can you launch a basic funnel + booking system?</span>
-            <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 text-slate-800 dark:text-slate-200">+</span>
-          </button>
-          <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            If assets and offer details are ready, a clean funnel + form + calendar flow can be launched quickly. More complex automation and multi-step nurturing takes longer — I’ll confirm scope on the call.
-          </div>
-        </div>
-
       </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">Can you fix an existing GHL setup instead of building from scratch?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Yes. I can audit your funnels, pipelines, calendars, and workflows, then clean up triggers, tags, stages, and follow-up logic so leads don’t fall through the cracks.
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">Do you set up SMS/Email follow-ups and compliance basics?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Yes — I set up templates, timing, opt-out handling, and a clean workflow structure. For US numbers, I also help you get A2P 10DLC-ready (brand/campaign compliance flow).
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">Will my team know how to use it after setup?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          Yes. I keep naming consistent, document key workflows, and can record a short walkthrough so your team knows where to update templates, stages, and calendars.
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faqItem rounded-2xl bg-white/4 ring-1 ring-white/10">
+        <button class="faqBtn w-full flex items-center justify-between gap-4 p-4 text-left">
+          <span class="text-sm md:text-base font-semibold">How fast can you launch a basic funnel + booking system?</span>
+          <span class="faqIcon grid place-items-center h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 text-slate-200">+</span>
+        </button>
+        <div class="faqPanel hidden px-4 pb-4 text-sm text-slate-300 leading-relaxed">
+          If assets and offer details are ready, a clean funnel + form + calendar flow can be launched quickly. More complex automation and multi-step nurturing takes longer — I’ll confirm scope on the call.
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-900/10 dark:border-white/5">
+  <footer class="border-t border-white/5">
     <div class="mx-auto max-w-7xl px-4 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-      <div class="text-sm text-slate-600 dark:text-slate-400">
+      <div class="text-sm text-slate-400">
         © <span id="year"></span> Abdul Kalam — GoHighLevel
       </div>
       <div class="flex flex-wrap gap-3 text-sm">
-        <a id="footerLinkedIn" class="text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition" href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a id="footerFacebook" class="text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition" href="#" target="_blank" rel="noopener">Facebook</a>
-        <a id="footerInstagram" class="text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition" href="#" target="_blank" rel="noopener">Instagram</a>
-        <a id="footerCalendar" class="text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition" href="#">Book</a>
-        <a id="footerWhatsApp" class="text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="footerLinkedIn" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="footerFacebook" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a id="footerInstagram" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a id="footerCalendar" class="text-slate-300 hover:text-white transition" href="#">Book</a>
+        <a id="footerWhatsApp" class="text-slate-300 hover:text-white transition" href="#" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </footer>
 
   <!-- PROOF MODAL -->
   <div id="proofBackdrop" class="hidden fixed inset-0 z-[80] bg-black/70 backdrop-blur-sm px-4 py-10">
-    <div class="mx-auto max-w-4xl rounded-3xl bg-white dark:bg-slate-950 ring-1 ring-slate-900/10 dark:ring-white/10 overflow-hidden">
-      <div class="flex items-start justify-between gap-4 border-b border-slate-900/10 dark:border-white/5 p-6">
+    <div class="mx-auto max-w-4xl rounded-3xl bg-slate-950 ring-1 ring-white/10 overflow-hidden">
+      <div class="flex items-start justify-between gap-4 border-b border-white/5 p-6">
         <div>
-          <h3 id="proofTitle" class="text-xl md:text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">Proof</h3>
-          <p id="proofDesc" class="mt-2 text-sm text-slate-700 dark:text-slate-300"></p>
+          <h3 id="proofTitle" class="text-xl md:text-2xl font-semibold tracking-tight">Proof</h3>
+          <p id="proofDesc" class="mt-2 text-sm text-slate-300"></p>
         </div>
-        <button id="proofClose" class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition" aria-label="Close">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800 dark:text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button id="proofClose" class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
@@ -760,44 +917,60 @@
   </div>
 
   <script>
+  // FAQ accordion (single open at a time)
+  (function () {
+    const items = Array.from(document.querySelectorAll(".faqItem"));
+    if (!items.length) return;
+
+    function closeAll(except) {
+      items.forEach(item => {
+        if (item === except) return;
+        item.querySelector(".faqPanel")?.classList.add("hidden");
+        const ic = item.querySelector(".faqIcon");
+        if (ic) ic.textContent = "+";
+      });
+    }
+
+    items.forEach(item => {
+      const btn = item.querySelector(".faqBtn");
+      const panel = item.querySelector(".faqPanel");
+      const icon = item.querySelector(".faqIcon");
+
+      btn?.addEventListener("click", () => {
+        const isOpen = !panel.classList.contains("hidden");
+        closeAll(item);
+        if (isOpen) {
+          panel.classList.add("hidden");
+          if (icon) icon.textContent = "+";
+        } else {
+          panel.classList.remove("hidden");
+          if (icon) icon.textContent = "–";
+        }
+      });
+    });
+  })();
     // =========================================================
     // UPDATE THESE ONLY (your real links)
     // =========================================================
+
+
+  
     const LINKS = {
       linkedin: "https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/",
       facebook: "https://web.facebook.com/profile.php?id=100076966325420",
       instagram: "https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5",
+
       whatsappNumber: "923097502122",
       whatsappPrefill: "Hi Abdul, I want help with GoHighLevel setup (funnels, CRM, automations).",
+
       calendar: "https://link.romatechnologies.com/widget/booking/bzMxJvwGL0LammXXjigv",
+
       funnelUrls: [
         "https://app.gohighlevel.com/v2/preview/yPiYnFKvPYF4xDYIzLNt",
         "https://app.gohighlevel.com/v2/preview/xuOcvunHtTCRSVkE0ZPy",
         "https://app.gohighlevel.com/v2/preview/uxsVWsM1SOl34IDkkWYN"
       ]
     };
-
-    // Theme toggle (fixes light-mode visibility by using proper Tailwind dark: classes above)
-    (function () {
-      const btn = document.getElementById("themeToggle");
-      const icon = document.getElementById("themeIcon");
-      const label = document.getElementById("themeLabel");
-      if (!btn) return;
-
-      function sync() {
-        const isDark = document.documentElement.classList.contains("dark");
-        icon.textContent = isDark ? "🌙" : "☀️";
-        label.textContent = isDark ? "Dark" : "Light";
-      }
-
-      btn.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-        localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
-        sync();
-      });
-
-      sync();
-    })();
 
     function waLink(msg) {
       return `https://wa.me/${LINKS.whatsappNumber}?text=${encodeURIComponent(msg || LINKS.whatsappPrefill)}`;
@@ -811,28 +984,29 @@
 
     const wa = waLink();
     ["heroWhatsApp","contactWhatsApp","footerWhatsApp","packagesWhatsApp"].forEach(id => setHref(id, wa));
+
     ["heroCalendar","contactCalendar","footerCalendar"].forEach(id => setHref(id, LINKS.calendar));
 
     document.querySelectorAll(".funnelLink").forEach((a, idx) => { a.href = LINKS.funnelUrls[idx] || "#"; });
 
     // Mobile menu
-    const mb = document.getElementById("mobileBtn");
+    const btn = document.getElementById("mobileBtn");
     const menu = document.getElementById("mobileMenu");
-    mb?.addEventListener("click", () => {
+    btn?.addEventListener("click", () => {
       const nowHidden = menu.classList.toggle("hidden");
-      mb.setAttribute("aria-expanded", String(!nowHidden));
+      btn.setAttribute("aria-expanded", String(!nowHidden));
     });
     menu?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
       menu.classList.add("hidden");
-      mb?.setAttribute("aria-expanded", "false");
+      btn?.setAttribute("aria-expanded", "false");
     }));
 
     // Reveal on scroll
-    const revealItems = document.querySelectorAll(".reveal");
+    const items = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); });
     }, { threshold: 0.12 });
-    revealItems.forEach(el => io.observe(el));
+    items.forEach(el => io.observe(el));
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -863,7 +1037,7 @@
 
       (images || []).forEach((src, i) => {
         const card = document.createElement("div");
-        card.className = "rounded-2xl overflow-hidden bg-slate-900/5 dark:bg-white/5 ring-1 ring-slate-900/10 dark:ring-white/10";
+        card.className = "rounded-2xl overflow-hidden bg-white/5 ring-1 ring-white/10";
         card.innerHTML = `
           <div class="aspect-[16/10] w-full overflow-hidden">
             <img src="${src}" class="h-full w-full object-cover opacity-95" alt="Proof ${i+1}"/>
@@ -904,49 +1078,26 @@
       tabBtns.forEach(btn => {
         const active = btn.getAttribute("data-tab") === name;
         btn.className = active
-          ? "tabBtn rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25"
-          : "tabBtn rounded-full bg-slate-900/5 dark:bg-white/5 text-slate-800 dark:text-slate-200 px-4 py-2 text-sm ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-slate-900/10 dark:hover:bg-white/10 transition";
+          ? "tabBtn rounded-full bg-emerald-500/15 text-emerald-200 px-4 py-2 text-sm ring-1 ring-emerald-400/25"
+          : "tabBtn rounded-full bg-white/5 text-slate-200 px-4 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10";
       });
     }
     tabBtns.forEach(btn => btn.addEventListener("click", () => showTab(btn.getAttribute("data-tab"))));
     showTab("funnels");
 
-    // FAQ accordion (single open at a time)
-    (function () {
-      const items = Array.from(document.querySelectorAll(".faqItem"));
-      if (!items.length) return;
-
-      function closeAll(except) {
-        items.forEach(item => {
-          if (item === except) return;
-          item.querySelector(".faqPanel")?.classList.add("hidden");
-          const ic = item.querySelector(".faqIcon");
-          if (ic) ic.textContent = "+";
-        });
-      }
-
-      items.forEach(item => {
-        const btn = item.querySelector(".faqBtn");
-        const panel = item.querySelector(".faqPanel");
-        const icon = item.querySelector(".faqIcon");
-
-        btn?.addEventListener("click", () => {
-          const isOpen = !panel.classList.contains("hidden");
-          closeAll(item);
-          if (isOpen) {
-            panel.classList.add("hidden");
-            if (icon) icon.textContent = "+";
-          } else {
-            panel.classList.remove("hidden");
-            if (icon) icon.textContent = "–";
-          }
-        });
-      });
-    })();
-
+    // =========================
     // Typewriter (Hero)
+    // =========================
     (function () {
-      const words = ["Funnels","CRM Pipelines","Automations","Calendars","SMS/Email Follow-ups","Lead Nurture"];
+      const words = [
+        "Funnels",
+        "CRM Pipelines",
+        "Automations",
+        "Calendars",
+        "SMS/Email Follow-ups",
+        "Lead Nurture"
+      ];
+
       const el = document.getElementById("typeText");
       if (!el) return;
 
@@ -955,33 +1106,84 @@
         return;
       }
 
-      let w = 0, i = 0, deleting = false;
-      const typeSpeed = 55, deleteSpeed = 32, holdTime = 900, gapTime = 260;
+      let w = 0;
+      let i = 0;
+      let deleting = false;
+
+      const typeSpeed = 55;
+      const deleteSpeed = 32;
+      const holdTime = 900;
+      const gapTime  = 260;
 
       function tick() {
         const word = words[w];
+
         if (!deleting) {
           i++;
           el.textContent = word.slice(0, i);
+
           if (i === word.length) {
-            setTimeout(() => { deleting = true; tick(); }, holdTime);
+            setTimeout(() => {
+              deleting = true;
+              tick();
+            }, holdTime);
             return;
           }
+
           setTimeout(tick, typeSpeed);
         } else {
           i--;
           el.textContent = word.slice(0, Math.max(i, 0));
+
           if (i <= 0) {
             deleting = false;
             w = (w + 1) % words.length;
             setTimeout(tick, gapTime);
             return;
           }
+
           setTimeout(tick, deleteSpeed);
         }
       }
+
       tick();
     })();
+     // =========================
+  // THEME TOGGLE (Dark/Light)
+  // =========================
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById("themeToggle");
+    const icon = document.getElementById("themeIcon");
+    const text = document.getElementById("themeText");
+
+    // Detect saved theme or system preference
+    const saved = localStorage.getItem("theme");
+    const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+
+    function setTheme(mode) {
+      if (mode === "light") {
+        root.classList.add("light");
+        if (icon) icon.textContent = "☀️";
+        if (text) text.textContent = "Light";
+      } else {
+        root.classList.remove("light");
+        if (icon) icon.textContent = "🌙";
+        if (text) text.textContent = "Dark";
+      }
+      localStorage.setItem("theme", mode);
+    }
+
+    // Initial
+    if (saved) setTheme(saved);
+    else setTheme(prefersLight ? "light" : "dark");
+
+    // Toggle
+    btn?.addEventListener("click", () => {
+      const isLight = root.classList.contains("light");
+      setTheme(isLight ? "dark" : "light");
+    });
+  })();
   </script>
 </body>
 </html>
