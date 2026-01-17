@@ -118,6 +118,48 @@
       .shine::after { animation: none; }
       .typeCursor { animation: none; }
     }
+    <style>
+  /* ...your existing CSS... */
+
+  /* =========================
+     THEME (Light / Dark)
+     We toggle .light on <html>
+     ========================= */
+  html.light body{
+    background: #f8fafc; /* slate-50 */
+    color: #0f172a;      /* slate-900 */
+  }
+
+  /* navbar in light */
+  html.light header{
+    background: rgba(248,250,252,.75) !important;
+    border-color: rgba(15,23,42,.08) !important;
+  }
+
+  /* global text helpers */
+  html.light .text-slate-300{ color: rgba(15,23,42,.72) !important; }
+  html.light .text-slate-400{ color: rgba(15,23,42,.55) !important; }
+  html.light .text-slate-200{ color: rgba(15,23,42,.72) !important; }
+  html.light .text-slate-100{ color: rgba(15,23,42,.92) !important; }
+
+  /* cards/rings in light */
+  html.light .bg-white\/4{ background: rgba(15,23,42,.04) !important; }
+  html.light .bg-white\/5{ background: rgba(15,23,42,.06) !important; }
+  html.light .bg-white\/6{ background: rgba(15,23,42,.07) !important; }
+  html.light .ring-white\/10{ --tw-ring-color: rgba(15,23,42,.10) !important; }
+  html.light .border-white\/5{ border-color: rgba(15,23,42,.08) !important; }
+
+  /* keep hero glow but softer in light */
+  html.light .glow::before{
+    opacity: .65;
+  }
+
+  /* Optional: reduce heavy dark gradients on light */
+  html.light .bg-slate-950{
+    background: #f8fafc !important;
+  }
+</style>
+
   </style>
 
   <script>
@@ -133,7 +175,8 @@
   </script>
 </head>
 
-<body class="bg-slate-950 text-slate-100 font-sans">
+<body class="bg-slate-950 text-slate-100 font-sans transition-colors duration-300">
+
   <!-- Page background glow -->
   <div class="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
     <div class="absolute -top-44 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl"></div>
@@ -161,6 +204,15 @@
         <a class="hover:text-white transition" href="#work">Work Proof</a>
         <a class="hover:text-white transition" href="#contact">Contact</a>
       </div>
+      <!-- Theme Toggle -->
+<button id="themeToggle"
+  class="inline-flex h-10 items-center gap-2 rounded-xl bg-white/5 px-3 ring-1 ring-white/10 hover:bg-white/10 transition"
+  aria-label="Toggle theme"
+  title="Toggle dark/light">
+  <span id="themeIcon" class="text-base">🌙</span>
+  <span id="themeText" class="hidden sm:inline text-sm font-semibold text-slate-200">Dark</span>
+</button>
+
 
       <div class="flex items-center gap-2">
         <!-- Social Icons -->
@@ -1073,6 +1125,42 @@
 
       tick();
     })();
+     // =========================
+  // THEME TOGGLE (Dark/Light)
+  // =========================
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById("themeToggle");
+    const icon = document.getElementById("themeIcon");
+    const text = document.getElementById("themeText");
+
+    // Detect saved theme or system preference
+    const saved = localStorage.getItem("theme");
+    const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+
+    function setTheme(mode) {
+      if (mode === "light") {
+        root.classList.add("light");
+        if (icon) icon.textContent = "☀️";
+        if (text) text.textContent = "Light";
+      } else {
+        root.classList.remove("light");
+        if (icon) icon.textContent = "🌙";
+        if (text) text.textContent = "Dark";
+      }
+      localStorage.setItem("theme", mode);
+    }
+
+    // Initial
+    if (saved) setTheme(saved);
+    else setTheme(prefersLight ? "light" : "dark");
+
+    // Toggle
+    btn?.addEventListener("click", () => {
+      const isLight = root.classList.contains("light");
+      setTheme(isLight ? "dark" : "light");
+    });
+  })();
   </script>
 </body>
 </html>
