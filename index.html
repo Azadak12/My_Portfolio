@@ -181,6 +181,23 @@
   html.light .bg-slate-950{
     background: #f8fafc !important;
   }
+    /* =========================
+   FINAL LIGHT MODE SAFETY FIX
+   ========================= */
+html.light .text-white,
+html.light .text-slate-100,
+html.light .text-slate-200{
+  color:#0f172a !important; /* slate-900 */
+}
+
+html.light .text-slate-300{ color: rgba(15,23,42,.72) !important; }
+html.light .text-slate-400{ color: rgba(15,23,42,.55) !important; }
+
+/* Hover text that becomes white in dark mode (navbar links etc.) */
+html.light .hover\:text-white:hover{
+  color:#0f172a !important;
+}
+
 
   </style>
 
@@ -357,7 +374,6 @@
           <!-- Right: YOUR PHOTO ONLY -->
           <div class="relative">
             <div class="relative rounded-3xl overflow-hidden ring-1 ring-white/10 bg-white/5">
-              <img
            <img
   src="AK.png"
   alt="Abdul Kalam, GoHighLevel systems specialist building CRM pipelines and automation workflows"
@@ -366,6 +382,7 @@
   loading="lazy"
   decoding="async"
 />
+
 
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"></div>
 
