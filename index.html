@@ -47,6 +47,29 @@
   </script>
 
   <style>
+     /* ...keep your existing theme CSS... */
+
+  /* Fix: any hard-coded white text in light mode */
+  html.light .text-white{ color: #0f172a !important; }                 /* slate-900 */
+  html.light .text-emerald-200{ color: rgb(6 95 70) !important; }      /* emerald-800 */
+  html.light .text-emerald-300{ color: rgb(5 150 105) !important; }    /* emerald-600 */
+  html.light .text-blue-300{ color: rgb(29 78 216) !important; }       /* blue-700 */
+
+  /* Fix: black/transparent chips & badges that relied on dark background */
+  html.light .bg-black\/35{ background: rgba(15,23,42,.08) !important; }
+  html.light .bg-emerald-500\/20{ background: rgba(16,185,129,.14) !important; }
+  html.light .bg-white\/10{ background: rgba(15,23,42,.08) !important; }
+  html.light .bg-white\/8{ background: rgba(15,23,42,.06) !important; }
+
+  /* Fix: gradients that made text look washed out in light mode */
+  html.light .from-slate-950\/70{ --tw-gradient-from: rgba(15,23,42,.25) !important; }
+  html.light .via-slate-950\/10{ --tw-gradient-via: rgba(15,23,42,.06) !important; }
+
+  /* Fix: icon buttons & pills */
+  html.light .bg-slate-950\/70{ background: rgba(248,250,252,.75) !important; }
+
+  /* Optional: make rings slightly stronger in light for contrast */
+  html.light .ring-white\/10{ --tw-ring-color: rgba(15,23,42,.14) !important; }
     /* Smooth reveal */
     .reveal { opacity: 0; transform: translateY(14px); transition: .6s ease; }
     .reveal.in { opacity: 1; transform: translateY(0); }
