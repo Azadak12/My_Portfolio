@@ -227,110 +227,111 @@ html.light .typeCursor{
 
 <body class="bg-slate-950 text-slate-100 font-sans transition-colors duration-300">
 
-  <!-- Page background glow -->
-  <div class="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
-    <div class="absolute -top-44 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl"></div>
-    <div class="absolute top-40 right-[-120px] h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-3xl"></div>
-    <div class="absolute bottom-[-160px] left-[-120px] h-[520px] w-[520px] rounded-full bg-purple-500/10 blur-3xl"></div>
-  </div>
+<!-- Page background glow -->
+<div class="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+  <div class="absolute -top-44 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl"></div>
+  <div class="absolute top-40 right-[-120px] h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-3xl"></div>
+  <div class="absolute bottom-[-160px] left-[-120px] h-[520px] w-[520px] rounded-full bg-purple-500/10 blur-3xl"></div>
+</div>
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 bg-slate-950/70 backdrop-blur border-b border-white/5">
-    <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-      <a href="#about" class="flex items-center gap-2">
-        <div class="h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 grid place-items-center">
-          <span class="text-sm font-semibold">AK</span>
-        </div>
-        <div class="leading-tight">
-          <div class="text-sm font-semibold">Abdul Kalam</div>
-          <div class="text-xs text-slate-400">GoHighLevel Funnels • CRM • Automations</div>
-        </div>
-      </a>
-
-      <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-        <a class="hover:text-white transition" href="#about">About</a>
-        <a class="hover:text-white transition" href="#services">Services</a>
-         <a class="hover:text-white transition" href="#work">Work Proof</a>
-        <a class="hover:text-white transition" href="#why">Why Choose Me</a>
-       
-        <a class="hover:text-white transition" href="#contact">Contact</a>
+<!-- NAVBAR -->
+<header class="sticky top-0 z-40 bg-slate-950/70 backdrop-blur border-b border-white/5">
+  <nav class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+    <a href="#about" class="flex items-center gap-2">
+      <div class="h-9 w-9 rounded-xl bg-white/5 ring-1 ring-white/10 grid place-items-center">
+        <span class="text-sm font-semibold">AK</span>
       </div>
+      <div class="leading-tight">
+        <div class="text-sm font-semibold">Abdul Kalam</div>
+        <div class="text-xs text-slate-400">GoHighLevel Funnels • CRM • Automations</div>
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+      <a class="hover:text-white transition" href="#about">About</a>
+      <a class="hover:text-white transition" href="#services">Services</a>
+      <a class="hover:text-white transition" href="#work">Work Proof</a>
+      <a class="hover:text-white transition" href="#why">Why Choose Me</a>
+      <a class="hover:text-white transition" href="#contact">Contact</a>
+    </div>
+
+    <!-- RIGHT SIDE (toggle + icons + menu with proper spacing) -->
+    <div class="flex items-center gap-4">
       <!-- Theme Toggle -->
-<button id="themeToggle"
-  class="inline-flex h-10 items-center gap-2 rounded-xl bg-white/5 px-3 ring-1 ring-white/10 hover:bg-white/10 transition"
-  aria-label="Toggle theme"
-  title="Toggle dark/light">
-  <span id="themeIcon" class="text-base">🌙</span>
-  <span id="themeText" class="hidden sm:inline text-sm font-semibold text-slate-200">Dark</span>
-</button>
+      <button id="themeToggle"
+        class="inline-flex h-10 items-center gap-2 rounded-xl bg-white/5 px-3 ring-1 ring-white/10 hover:bg-white/10 transition"
+        aria-label="Toggle theme"
+        title="Toggle dark/light">
+        <span id="themeIcon" class="text-base">🌙</span>
+        <span id="themeText" class="hidden sm:inline text-sm font-semibold text-slate-200">Dark</span>
+      </button>
 
-
+      <!-- Social Icons + Resume + Mobile Menu -->
       <div class="flex items-center gap-2">
-        <!-- Social Icons -->
         <a id="navLinkedIn" href="https://www.linkedin.com/in/abdul-kalam-ghl-marketing-strategist/" target="_blank" rel="noopener"
-           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-           aria-label="LinkedIn">
+          class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+          aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V24h-4V8Zm7 0h3.8v2.2h.05C12 8.9 13.6 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V24h-4v-8.9c0-2.1 0-4.8-2.9-4.8-2.9 0-3.4 2.3-3.4 4.6V24h-4V8Z"/>
           </svg>
         </a>
 
         <a id="navFacebook" href="https://web.facebook.com/profile.php?id=100076966325420" target="_blank" rel="noopener"
-           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-           aria-label="Facebook">
+          class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+          aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/>
           </svg>
         </a>
 
         <a id="navInstagram" href="https://www.instagram.com/kalamak66?igsh=dGJ0d3p3MDlia2N5" target="_blank" rel="noopener"
-           class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-           aria-label="Instagram">
+          class="hidden sm:grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+          aria-label="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.7-.9a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
           </svg>
         </a>
 
         <a id="navResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank" rel="noopener"
-           class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
+          class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 ring-1 ring-white/10 hover:bg-white/10 transition">
           Resume
         </a>
 
         <!-- Mobile menu button -->
         <button id="mobileBtn"
-                class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
-                aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+          class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition"
+          aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-white/5">
-      <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-1 text-sm text-slate-300">
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#about">About</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#services">Services</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#packages">Packages</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#why">Why Choose Me</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#work">Work Proof</a>
-        <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact</a>
-        
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/5">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-1 text-sm text-slate-300">
+      <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#about">About</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#services">Services</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#packages">Packages</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#why">Why Choose Me</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#work">Work Proof</a>
+      <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="#contact">Contact</a>
 
-        <a id="mResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank" rel="noopener"
-           class="rounded-xl bg-white/5 px-4 py-3 text-center font-semibold ring-1 ring-white/10 hover:bg-white/10 transition">
-          Resume
-        </a>
+      <a id="mResume" href="https://drive.google.com/file/d/1AmonKHh9sDQXca00YFYknh77ygd3wzaL/view?usp=sharing" target="_blank" rel="noopener"
+        class="rounded-xl bg-white/5 px-4 py-3 text-center font-semibold ring-1 ring-white/10 hover:bg-white/10 transition">
+        Resume
+      </a>
 
-        <div class="mt-2 grid grid-cols-3 gap-2">
-          <a id="mLinkedIn" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">LinkedIn</a>
-          <a id="mFacebook" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Facebook</a>
-          <a id="mInstagram" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Instagram</a>
-        </div>
+      <div class="mt-2 grid grid-cols-3 gap-2">
+        <a id="mLinkedIn" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">LinkedIn</a>
+        <a id="mFacebook" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Facebook</a>
+        <a id="mInstagram" href="#" target="_blank" rel="noopener" class="rounded-xl bg-white/5 px-3 py-3 text-center ring-1 ring-white/10 hover:bg-white/10 transition">Instagram</a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- ABOUT / HERO -->
   <section id="about" class="relative">
